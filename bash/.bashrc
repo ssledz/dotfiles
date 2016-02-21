@@ -106,4 +106,4 @@ fi
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-eval "$(jenv init -)"
+[[ -s "$HOME/.jenv/bin/jenv" ]] && eval "$(jenv init -)"
