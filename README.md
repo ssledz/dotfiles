@@ -17,3 +17,8 @@ To unlink
 cd dotfiles
 stow -D -v -t ~/ bash common functions git tmux vim
 ```
+
+##Set up [Vundle](https://github.com/VundleVim/Vundle.vim)
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
