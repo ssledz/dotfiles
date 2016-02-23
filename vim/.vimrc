@@ -31,11 +31,8 @@ set hlsearch      " highlight matches
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
+syntax enable
+syntax on
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -43,10 +40,10 @@ endif
 
 filetype plugin indent on
 
-" All tabs expand to four spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" All tabs expand to two spaces
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Color scheme
@@ -104,12 +101,6 @@ set undodir=~/.vim/undo/
 set undofile
 set undolevels=1000
 set undoreload=10000
-
-:nnoremap <expr> y (v:register ==# '"' ? '"+' : '') . 'y'
-:nnoremap <expr> yy (v:register ==# '"' ? '"+' : '') . 'yy'
-:nnoremap <expr> Y (v:register ==# '"' ? '"+' : '') . 'Y'
-:xnoremap <expr> y (v:register ==# '"' ? '"+' : '') . 'y'
-:xnoremap <expr> Y (v:register ==# '"' ? '"+' : '') . 'Y
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
