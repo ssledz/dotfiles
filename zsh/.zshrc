@@ -55,6 +55,8 @@ plugins=(git)
 
 [[ -s "$HOME/.env_variables" ]] && source "$HOME/.env_variables"
 
+[[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
+
 source $ZSH/oh-my-zsh.sh
 
 [[ -s "$HOME/.jenv_functions" ]] && source "$HOME/.jenv_functions"
