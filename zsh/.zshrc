@@ -65,13 +65,13 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.jenv/bin/jenv" ]] && eval "$(jenv init -)" && JAVA_HOME=`jenv javahome`
 
 # init rbenv
-[[ -s "$HOME/.rbenv/scripts/rbenv" ]] && eval "$(rbenv init -)"
+[[ -s "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
 
 #init nodenv
-[[ -s "$HOME/.nodenv/scripts/nodenv" ]] && eval "$(nodenv init -)"
+[[ -s "$HOME/.nodenv/bin/nodenv" ]] && eval "$(nodenv init -)"
 
 #init pyenv
-[[ -s "$HOME/.pyenv/scripts/pyenv" ]] && eval "$(pyenv init -)"
+[[ -s "$HOME/.pyenv/bin/pyenv" ]] && eval "$(pyenv init -)"
 
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
