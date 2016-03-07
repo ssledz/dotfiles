@@ -95,3 +95,8 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.zsh_aliases ]; then
     source ~/.zsh_aliases
 fi
+
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
+
