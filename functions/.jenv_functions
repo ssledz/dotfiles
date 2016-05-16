@@ -38,3 +38,11 @@ function jboss_debug_unset() {
     jenv shell-options --unset
 }
 
+function hotswap_set() {
+    jenv shell-options "$JENV_OPTIONS -XXaltjvm=dcevm -javaagent:$HOME_BIN/hotswap/hotswap-agent.jar=autoHotswap=true"
+}
+
+function hotswap_unset() {
+    jenv shell-options --unset
+}
+
