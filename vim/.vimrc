@@ -106,6 +106,11 @@ set undoreload=10000
 set splitbelow
 set splitright
 
+" Font
+if has('gui_running')
+  set guifont=Monospace\ 20
+endif
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
