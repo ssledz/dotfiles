@@ -136,7 +136,7 @@ lain.widgets.calendar:attach(mytextclock, { font_size = 10 })
 -- Weather
 weathericon = wibox.widget.imagebox(beautiful.widget_weather)
 myweather = lain.widgets.weather({
-    city_id = 123456, -- placeholder
+    city_id = 756135, -- placeholder
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
