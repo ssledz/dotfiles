@@ -675,15 +675,20 @@ volumewidget = lain.widgets.pulseaudio({
         keys = clientkeys,
         buttons = clientbuttons,
         size_hints_honor = false } },
+
         { rule = { class = "URxvt" },
         properties = { opacity = 0.99 } },
+
         { rule = { class = "MPlayer" },
         properties = { floating = true } },
 
         { rule = { class = "Dwb" },
         properties = { tag = tags[1][1] } },
 
-        { rule = { class = "Iron" },
+        { rule = { class = "Firefox" },
+        properties = { tag = tags[1][1] } },
+
+        { rule = { class = "google-chrome" },
         properties = { tag = tags[1][1] } },
 
         { rule = { instance = "plugin-container" },
