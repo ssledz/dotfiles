@@ -208,11 +208,22 @@ volicon = wibox.widget.imagebox(beautiful.widget_vol)
 volumewidget = lain.widgets.pulseaudio({
   sink = 1,
   settings = function()
-    if volume_now.muted == "yes" then
-      volume_now.left = volume_now.left .. "M"
+
+    local volume = volume_now.left
+
+    if volume == nil then
+      volume = "N/A"
     end
 
-    widget:set_markup(markup("#7493d2", volume_now.left .. "% "))
+    if volume_now.muted == "yes" then
+      volume = volume .. "M"
+    end
+
+    if volume_now.left then
+      volume = volume .. "% "
+    end
+
+    widget:set_markup(markup("#7493d2", volume))
   end
 })
 
