@@ -89,8 +89,8 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-   names = { "web", "term", "docs", "media", "files", "other" },
-   layout = { layouts[1], layouts[3], layouts[4], layouts[1], layouts[7], layouts[1] }
+   names = { "web", "term", "ide",  "docs", "media", "files", "other" },
+   layout = { layouts[1], layouts[3], layouts[1], layouts[4], layouts[1], layouts[7], layouts[1] }
 }
 for s = 1, screen.count() do
 -- Each screen has its own tag table.
@@ -478,7 +478,7 @@ volumewidget = lain.widgets.pulseaudio({
       end),
 
       -- Show Menu
-      awful.key({ modkey }, "w",
+      awful.key({ modkey }, "q",
       function ()
         mymainmenu:show({ keygrabber = true })
       end),
@@ -574,10 +574,11 @@ volumewidget = lain.widgets.pulseaudio({
       awful.key({ modkey }, "c", function () os.execute("xsel -p -o | xsel -i -b") end),
 
       -- User programs
-      awful.key({ modkey }, "q", function () awful.util.spawn(browser) end),
-      awful.key({ modkey }, "i", function () awful.util.spawn(browser2) end),
-      awful.key({ modkey }, "s", function () awful.util.spawn(gui_editor) end),
+      awful.key({ modkey }, "w", function () awful.util.spawn(browser) end),
+      awful.key({ modkey }, "s", function () awful.util.spawn(browser2) end),
+      awful.key({ modkey }, "e", function () awful.util.spawn(gui_editor) end),
       awful.key({ modkey }, "g", function () awful.util.spawn(graphics) end),
+      awful.key({ modkey }, "i", function () awful.util.spawn("idea") end),
 
       -- Prompt
       awful.key({ modkey }, "r", function () mypromptbox[mouse.screen]:run() end),
@@ -676,7 +677,6 @@ volumewidget = lain.widgets.pulseaudio({
         size_hints_honor = false } },
         { rule = { class = "URxvt" },
         properties = { opacity = 0.99 } },
-
         { rule = { class = "MPlayer" },
         properties = { floating = true } },
 
@@ -691,6 +691,9 @@ volumewidget = lain.widgets.pulseaudio({
 
         { rule = { class = "Gimp" },
         properties = { tag = tags[1][4] } },
+
+        { rule = { class = "jetbrains-idea" },
+        properties = { tag = tags[1][3] } },
 
         { rule = { class = "Gimp", role = "gimp-image-window" },
         properties = { maximized_horizontal = true,
