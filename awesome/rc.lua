@@ -13,7 +13,6 @@ awful.rules     = require("awful.rules")
 local wibox     = require("wibox")
 local beautiful = require("beautiful")
 local naughty   = require("naughty")
-local drop      = require("scratchdrop")
 local lain      = require("lain")
 -- }}}
 
@@ -85,6 +84,13 @@ local layouts = {
     awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
 }
+-- }}}
+
+-- quake terminal
+local quakeconsole = {}
+for s = 1, screen.count() do
+   quakeconsole[s] = lain.util.quake({ app = terminal })
+end
 -- }}}
 
 -- {{{ Tags
@@ -204,9 +210,10 @@ batwidget = lain.widgets.bat({
 })
 
 -- Pulseaudio volume
+pulseaudio = {}
+pulseaudio.sink = 0
 volicon = wibox.widget.imagebox(beautiful.widget_vol)
 volumewidget = lain.widgets.pulseaudio({
-  sink = 1,
   settings = function()
 
     local volume = volume_now.left
@@ -518,7 +525,7 @@ volumewidget = lain.widgets.pulseaudio({
       awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
 
       -- Dropdown terminal
-      awful.key({ modkey,	          }, "z",      function () drop(terminal) end),
+      awful.key({ modkey,	          }, "z",      function () quakeconsole[mouse.screen]:toggle() end),
 
       -- Widgets popups
       awful.key({ altkey,           }, "c",      function () lain.widgets.calendar:show(7) end),
@@ -528,23 +535,23 @@ volumewidget = lain.widgets.pulseaudio({
       -- Pulse volume control
       awful.key({ altkey }, "Up",
       function ()
-        os.execute(string.format("pactl set-sink-mute %s  false ; pactl set-sink-volume 1 +1%%", volumewidget.sink))
+        os.execute(string.format("pactl set-sink-mute %s false ; pactl set-sink-volume %s +1%%", pulseaudio.sink, pulseaudio.sink))
         volumewidget.update()
       end),
       awful.key({ altkey }, "Down",
       function ()
-        os.execute(string.format("pactl set-sink-mute %s false ; pactl set-sink-volume 1 -1%%", volumewidget.sink))
+        os.execute(string.format("pactl set-sink-mute %s false ; pactl set-sink-volume %s -1%%", pulseaudio.sink, pulseaudio.sink))
         volumewidget.update()
       end),
       awful.key({ altkey }, "m",
       function ()
         --os.execute(string.format("amixer set %s toggle", volumewidget.channel))
-        os.execute(string.format("pactl set-sink-mute %s toggle", volumewidget.sink))
+        os.execute(string.format("pactl set-sink-mute %s toggle", pulseaudio.sink))
         volumewidget.update()
       end),
       awful.key({ altkey, "Control" }, "m",
       function ()
-        os.execute(string.format("pactl set-sink-mute %s false ; pactl set-sink-volume 1 100%%", volumewidget.sink))
+        os.execute(string.format("pactl set-sink-mute %s false ; pactl set-sink-volume %s 100%%", pulseaudio.sink, pulseaudio.sink))
         volumewidget.update()
       end),
 
