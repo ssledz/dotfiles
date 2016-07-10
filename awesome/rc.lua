@@ -570,9 +570,6 @@ volumewidget = lain.widgets.pulseaudio({
         mpdwidget.update()
       end),
 
-      -- Copy to clipboard
-      awful.key({ modkey }, "c", function () os.execute("xsel -p -o | xsel -i -b") end),
-
       -- User programs
       awful.key({ modkey }, "w", function () awful.util.spawn(browser) end),
       awful.key({ modkey }, "s", function () awful.util.spawn(browser2) end),
