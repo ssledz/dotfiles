@@ -1,26 +1,28 @@
 #compdef jenv
 #autoload
 
-local -a _jenv_commands
+local -a cmdlist
 
-_jenv_commands=(
-  'commands:List all available jenv commands'
-  'local:Set or show the local application-specific Java version'
-  'global:Set or show the global Java version'
-  'shell:Set or show the shell-specific Java version'
-  'rehash:Rehash jenv shims (run this after installing executables)'
-  'version:Show the current Java version and its origin'
-  'versions:List all Java versions available to jenv'
-  'which:Display the full path to an executable'
-  'whence:List all Java versions that contain the given executable'
-  'help:Show information on a specific command'
-)
+function _append_jenv_help() {
 
+  parse_args=0
+  _call_program help-commands jenv help | while read -A hline; do
+    [[ $hline =~ "Some useful jenv commands are:.*" ]] && parse_args=1 && continue
+    [[ $hline"x" == "x" ]] && parse_args=0
+    (( ${#hline} < 2 )) && continue
+    [[ $parse_args == 0 ]] && continue
+    cmdlist=($cmdlist "${hline[1]}:${hline[2,-1]}")
+  done
+
+  cmdlist=($cmdlist "help:Show information on a specific command")
+
+}
 
 _arguments \
   '--help[prints an help message]' \
   '--version[prints version]' \
   '*:: :->subcmds' && return 0
 
-_describe -t commands "jenv subcommand" _jenv_commands
-return
+_append_jenv_help
+
+_describe -t jenv-commands "jenv command" cmdlist
