@@ -53,7 +53,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git svn gitignore ubuntu ant mvn cp battery history rsync tmux vagrant vim-interaction)
+plugins=(git svn gitignore ubuntu ant sbt scala mvn cp battery history rsync tmux vagrant vim-interaction web-search)
 
 # User configuration
 
