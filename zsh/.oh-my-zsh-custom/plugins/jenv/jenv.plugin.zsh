@@ -34,7 +34,8 @@ function _jenv_init() {
 
 }
 
-[[ "$(_jenv_available)" == "true" ]] && JAVA_HOME=$(jenv javahome)
-
 _jenv_init
 
+[[ "$(_jenv_available)" == "true" ]] \
+  && JAVA_HOME=$(jenv javahome) \
+  && source $ZSH_CUSTOM/plugins/jenv/jenv_functions.zsh

@@ -63,8 +63,6 @@ plugins=(git jenv rbenv pyenv svn gitignore ubuntu ant sbt scala mvn cp battery 
 
 source $ZSH/oh-my-zsh.sh
 
-[[ -s "$HOME/.jenv_functions" ]] && source "$HOME/.jenv_functions"
-
 #init nodenv
 [[ -s "$HOME/.nodenv/bin/nodenv" ]] && eval "$(nodenv init -)"
 
