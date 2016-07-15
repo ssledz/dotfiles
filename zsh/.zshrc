@@ -53,7 +53,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git jenv svn gitignore ubuntu ant sbt scala mvn cp battery history rsync tmux vagrant vim-interaction web-search systemd)
+plugins=(git jenv rbenv pyenv svn gitignore ubuntu ant sbt scala mvn cp battery history rsync tmux vagrant vim-interaction web-search systemd)
 
 # User configuration
 
@@ -65,14 +65,8 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -s "$HOME/.jenv_functions" ]] && source "$HOME/.jenv_functions"
 
-# init rbenv
-[[ -s "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
-
 #init nodenv
 [[ -s "$HOME/.nodenv/bin/nodenv" ]] && eval "$(nodenv init -)"
-
-#init pyenv
-[[ -s "$HOME/.pyenv/bin/pyenv" ]] && eval "$(pyenv init -)"
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
