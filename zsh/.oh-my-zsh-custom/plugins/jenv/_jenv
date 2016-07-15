@@ -1,0 +1,26 @@
+#compdef jenv
+#autoload
+
+local -a _jenv_commands
+
+_jenv_commands=(
+  'commands:List all available jenv commands'
+  'local:Set or show the local application-specific Java version'
+  'global:Set or show the global Java version'
+  'shell:Set or show the shell-specific Java version'
+  'rehash:Rehash jenv shims (run this after installing executables)'
+  'version:Show the current Java version and its origin'
+  'versions:List all Java versions available to jenv'
+  'which:Display the full path to an executable'
+  'whence:List all Java versions that contain the given executable'
+  'help:Show information on a specific command'
+)
+
+
+_arguments \
+  '--help[prints an help message]' \
+  '--version[prints version]' \
+  '*:: :->subcmds' && return 0
+
+_describe -t commands "jenv subcommand" _jenv_commands
+return
