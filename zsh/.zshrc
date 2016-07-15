@@ -65,9 +65,6 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -s "$HOME/.jenv_functions" ]] && source "$HOME/.jenv_functions"
 
-# init jenv
-[[ -s "$HOME/.jenv/bin/jenv" ]] && eval "$(jenv init -)" && JAVA_HOME=`jenv javahome`
-
 # init rbenv
 [[ -s "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
 
@@ -77,10 +74,7 @@ source $ZSH/oh-my-zsh.sh
 #init pyenv
 [[ -s "$HOME/.pyenv/bin/pyenv" ]] && eval "$(pyenv init -)"
 
-
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-[[ -s "$HOME/.jenv/bin/jenv" ]] && eval "$(jenv init -)"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
