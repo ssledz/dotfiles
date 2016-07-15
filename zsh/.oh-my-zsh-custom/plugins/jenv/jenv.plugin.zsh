@@ -22,7 +22,7 @@ JENV_FOUND=0
 
 function _jenv_init() {
 
-  local -a jenv_dirs=("~/.jenv" "/usr/local/jenv")
+  local -a jenv_dirs=("$HOME/.jenv" "/usr/local/jenv")
 
   for jenv_dir in "${jenv_dirs[@]}" ; do
     if [ -s "${jenv_dir}/bin/jenv" -a $JENV_FOUND -eq 0 ] ; then
