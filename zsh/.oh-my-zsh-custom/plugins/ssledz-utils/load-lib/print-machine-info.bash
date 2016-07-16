@@ -1,0 +1,1 @@
+../lib/print-machine-info.bash
