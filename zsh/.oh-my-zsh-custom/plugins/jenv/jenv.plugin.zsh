@@ -29,7 +29,8 @@ _jenv_init() {
       jenv_found=1
       jenv_bin=${jenv_dir}/bin
       export PATH=${jenv_bin}:$PATH
-      eval "$(jenv init - zsh)"
+      #set shell to zzsh to prevent embedded completion for jenv
+      eval "$(jenv init - zzsh)"
     fi
   done
 }
