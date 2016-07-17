@@ -16,3 +16,10 @@ alias ds-mount-download='mount-cifs-ssledz //ds/downloads'
 alias ds-mount-download-mnt='ds-mount-download /mnt'
 alias ds-mount-home='mount-cifs-ssledz //ds/homes/ssledz'
 alias ds-mount-home-mnt='ds-mount-home /mnt'
+alias -g NULL="> /dev/null 2>&1"
+
+alias sc-suspend='sudo systemctl suspend'
+
+#Directory ailiasing
+hash -d git=$HOME/git #~git
+hash -d coursera=$HOME/git/coursera #~coursera

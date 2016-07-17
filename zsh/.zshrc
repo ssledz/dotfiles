@@ -53,7 +53,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git jenv rbenv pyenv svn gitignore ubuntu ant sbt scala mvn cp battery history rsync tmux vagrant vim-interaction web-search systemd ssledz-utils)
+plugins=(git jenv rbenv pyenv svn gitignore ubuntu ant sbt scala mvn cp battery history rsync tmux vagrant vi-mode vim-interaction web-search systemd ssledz-utils)
 
 # User configuration
 
@@ -82,6 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 if [ -f ~/.zsh_aliases ]; then
     source ~/.zsh_aliases
 fi
