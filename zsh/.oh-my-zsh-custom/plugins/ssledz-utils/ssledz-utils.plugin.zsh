@@ -23,3 +23,6 @@ alias sc-suspend='sudo systemctl suspend'
 #Directory ailiasing
 hash -d git=$HOME/git #~git
 hash -d coursera=$HOME/git/coursera #~coursera
+hash -d dot=$HOME/dotfiles
+
+bindkey '^Q' push-line-or-edit

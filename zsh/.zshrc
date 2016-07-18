@@ -57,6 +57,9 @@ plugins=(git jenv rbenv pyenv svn gitignore ubuntu ant sbt scala mvn cp battery 
 
 # User configuration
 
+# Any pattern that does not match is passed as a literal argument to the command (like in Bash)
+setopt NO_NOMATCH
+
 [[ -s "$HOME/.env_variables" ]] && source "$HOME/.env_variables"
 
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
