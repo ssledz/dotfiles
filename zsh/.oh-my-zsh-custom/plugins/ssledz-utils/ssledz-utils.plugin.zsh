@@ -20,6 +20,10 @@ alias -g NULL="> /dev/null 2>&1"
 
 alias sc-suspend='sudo systemctl suspend'
 
+alias rand10='echo $(( ( RANDOM % 10 ) + 1 ))'
+alias rand100='echo $(( ( RANDOM % 100 ) + 1 ))'
+alias rand1000='echo $(( ( RANDOM % 1000 ) + 1 ))'
+
 #Directory ailiasing
 hash -d git=$HOME/git #~git
 hash -d coursera=$HOME/git/coursera #~coursera
