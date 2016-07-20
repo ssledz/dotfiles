@@ -557,26 +557,26 @@ volumewidget = lain.widgets.pulseaudio({
       end),
 
       -- MPD control
-      awful.key({ altkey, "Control" }, "Up",
-      function ()
-        awful.util.spawn_with_shell("mpc toggle || ncmpc toggle || pms toggle")
-        mpdwidget.update()
-      end),
-      awful.key({ altkey, "Control" }, "Down",
-      function ()
-        awful.util.spawn_with_shell("mpc stop || ncmpc stop || pms stop")
-        mpdwidget.update()
-      end),
-      awful.key({ altkey, "Control" }, "Left",
-      function ()
-        awful.util.spawn_with_shell("mpc prev || ncmpc prev || pms prev")
-        mpdwidget.update()
-      end),
-      awful.key({ altkey, "Control" }, "Right",
-      function ()
-        awful.util.spawn_with_shell("mpc next || ncmpc next || pms next")
-        mpdwidget.update()
-      end),
+      --awful.key({ altkey, "Control" }, "Up",
+      --function ()
+      --  awful.util.spawn_with_shell("mpc toggle || ncmpc toggle || pms toggle")
+      --  mpdwidget.update()
+      --end),
+      --awful.key({ altkey, "Control" }, "Down",
+      --function ()
+      --  awful.util.spawn_with_shell("mpc stop || ncmpc stop || pms stop")
+      --  mpdwidget.update()
+      --end),
+      --awful.key({ altkey, "Control" }, "Left",
+      --function ()
+      --  awful.util.spawn_with_shell("mpc prev || ncmpc prev || pms prev")
+      --  mpdwidget.update()
+      --end),
+      --awful.key({ altkey, "Control" }, "Right",
+      --function ()
+      -- awful.util.spawn_with_shell("mpc next || ncmpc next || pms next")
+      --  mpdwidget.update()
+      --end),
 
       -- User programs
       awful.key({ modkey }, "w", function () awful.util.spawn(browser) end),
