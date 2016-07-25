@@ -108,7 +108,7 @@ set splitright
 
 " Font
 if has('gui_running')
-  set guifont=Monospace\ 20
+  set guifont=Monospace\ 16
 endif
 
 " Local config

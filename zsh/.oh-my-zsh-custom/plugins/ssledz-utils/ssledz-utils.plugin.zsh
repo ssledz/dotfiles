@@ -30,3 +30,4 @@ hash -d coursera=$HOME/git/coursera #~coursera
 hash -d dot=$HOME/dotfiles
 
 bindkey '^Q' push-line-or-edit
+bindkey '^R' history-incremental-search-backward
