@@ -389,13 +389,13 @@ awful.rules.rules = {
       --  properties = { opacity = 0.99 } },
 
         { rule = { class = "Firefox" },
-        properties = { tag = tags[1][1] } },
+        properties = { tag = tags[1][2] } },
 
         { rule = { class = "google-chrome" },
-        properties = { tag = tags[1][1] } },
+        properties = { tag = tags[1][2] } },
 
         { rule = { class = "jetbrains-idea" },
-        properties = { tag = tags[1][3] } },
+        properties = { tag = tags[1][4] } },
 
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
