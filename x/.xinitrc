@@ -33,6 +33,21 @@ sysresources="/etc/X11/xinit/.Xresources"
 [[ -r "${usermodmap}" ]]    && xmodmap "${usermodmap}"
 # }}}
 
+# {{{ Input settings
+#
+# Keyboard control, repeat delay and repeat rate
+xset r rate 200 30
+
+# Pointer control, acceleration and threshold
+#xset m 30/10 4
+
+# Pointer appearance
+#   - xcb does not support Xcursor yet
+xsetroot -cursor_name left_ptr
+
+# Disable the touchpad while typing
+#syndaemon -k -i 2 -d &
+# }}}
 
 # {{{ Display settings
 case "$(hostname)" in
