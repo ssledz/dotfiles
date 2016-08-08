@@ -42,6 +42,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvtc" or "xterm"
@@ -88,9 +89,14 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
+tags = {
+   names  = { "main", "www", "term", "dev", "steam", 6, 7, 8, 9 },
+   layout = { layouts[2], layouts[11], layouts[2], layouts[1], layouts[1],
+              layouts[2], layouts[2], layouts[2], layouts[2]
+ }}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "web", "term", "dev", 4, "steam", 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag(tags.names, s, tags.layout)
 end
 -- }}}
 
