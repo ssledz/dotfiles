@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # {{{ Environment settings
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then

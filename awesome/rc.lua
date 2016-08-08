@@ -91,7 +91,7 @@ end
 tags = {}
 tags = {
    names  = { "main", "www", "term", "dev", "steam", 6, 7, 8, 9 },
-   layout = { layouts[2], layouts[11], layouts[2], layouts[1], layouts[1],
+   layout = { layouts[2], layouts[1], layouts[2], layouts[1], layouts[1],
               layouts[2], layouts[2], layouts[2], layouts[2]
  }}
 for s = 1, screen.count() do
