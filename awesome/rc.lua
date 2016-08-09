@@ -285,7 +285,14 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- User programs
+    awful.key({ modkey }, "w", function () awful.util.spawn(browser) end),
+    awful.key({ modkey }, "s", function () awful.util.spawn(browser2) end),
+    awful.key({ modkey }, "e", function () awful.util.spawn(gui_editor) end),
+    awful.key({ modkey }, "i", function () awful.util.spawn("idea") end)
+
 )
 
 clientkeys = awful.util.table.join(
@@ -305,13 +312,7 @@ clientkeys = awful.util.table.join(
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
-        end),
--- User programs
-      awful.key({ modkey }, "w", function () awful.util.spawn(browser) end),
-      awful.key({ modkey }, "s", function () awful.util.spawn(browser2) end),
-      awful.key({ modkey }, "e", function () awful.util.spawn(gui_editor) end),
-      awful.key({ modkey }, "i", function () awful.util.spawn("idea") end)
-
+        end)
 )
 
 -- Bind all key numbers to tags.
