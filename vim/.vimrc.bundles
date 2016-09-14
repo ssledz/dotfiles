@@ -23,6 +23,7 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'derekwyatt/vim-scala'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
