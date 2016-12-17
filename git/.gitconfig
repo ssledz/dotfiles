@@ -124,3 +124,5 @@
 #http://blog.blindgaenger.net/advanced_git_aliases.html
 #https://gist.github.com/robmiller/6018582 (branch-name, publish, unpublish)
 #https://raw.githubusercontent.com/jakubnabrdalik/gitkurwa/master/config
+[credential]
+	helper = cache
