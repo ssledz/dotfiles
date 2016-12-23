@@ -37,6 +37,6 @@ _jenv_init() {
 
 _jenv_init \
   && [[ "$(_jenv_available)" == "true" ]] \
-  && JAVA_HOME=$($jenv_bin/jenv javahome) \
+  && export JAVA_HOME=$($jenv_bin/jenv javahome) \
   && source $ZSH_CUSTOM/plugins/jenv/jenv_functions.zsh
 
