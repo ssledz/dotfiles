@@ -91,7 +91,7 @@ end
 -- Define a tag table which hold all screen tags.
 tags = {}
 tags = {
-   names  = { "main", "www", "term", "dev", "steam", 6, 7, 8, 9 },
+   names  = { "1-main", "2-www", "3-term", "4-dev", "5-steam", 6, 7, 8, 9 },
    layout = { layouts[2], layouts[1], layouts[2], layouts[1], layouts[1],
               layouts[2], layouts[2], layouts[2], layouts[2]
  }}
