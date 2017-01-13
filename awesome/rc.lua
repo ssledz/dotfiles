@@ -411,7 +411,13 @@ awful.rules.rules = {
         { rule = { class = "jetbrains-idea" },
         properties = { maximized_horizontal = true,
                        maximized_vertical = true },
-        callback = function(c) awful.client.movetotag(tags[mouse.screen][2], c) end},
+        callback = function(c) awful.client.movetotag(tags[mouse.screen][4], c) end}
+
+--        { rule = { class = "jetbrains-idea" },
+--        properties = { maximized_horizontal = true,
+ --                      maximized_vertical = true },
+  --      callback = function(c) awful.client.movetotag(tags[mouse.screen][awful.tag.getidx()], c) end}
+
 
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
