@@ -51,6 +51,7 @@ editor_cmd = terminal .. " -e " .. editor
 browser = "google-chrome"
 browser2 = "firefox"
 gui_editor = "gvim"
+screen_lock="xscreensaver-command -lock"
 
 
 -- Default modkey.
@@ -248,7 +249,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
+    awful.key({ modkey, "Control" }, "Right", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
+    awful.key({ modkey, "Control" }, "Left", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
     awful.key({ modkey,           }, "Tab",
         function ()
@@ -291,7 +294,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "w", function () awful.util.spawn(browser) end),
     awful.key({ modkey }, "s", function () awful.util.spawn(browser2) end),
     awful.key({ modkey }, "e", function () awful.util.spawn(gui_editor) end),
-    awful.key({ modkey }, "i", function () awful.util.spawn("idea") end)
+    awful.key({ modkey }, "i", function () awful.util.spawn("idea") end),
+    awful.key({ modkey, "Control" }, "l", function () awful.util.spawn(screen_lock) end)
 
 )
 
