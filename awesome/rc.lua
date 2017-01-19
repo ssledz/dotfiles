@@ -52,6 +52,8 @@ browser = "google-chrome"
 browser2 = "firefox"
 gui_editor = "gvim"
 screen_lock="xscreensaver-command -lock"
+console_jabber_client=terminal .. " -e mcabber"
+console_music_player=terminal .. " -e cmus"
 
 
 -- Default modkey.
@@ -107,6 +109,8 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
+   { "jabber client", console_jabber_client},
+   { "music player", console_music_player},
    { "quit", awesome.quit }
 }
 
