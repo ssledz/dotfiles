@@ -40,15 +40,15 @@ timeout=10000
 
 new_message_in() {
   local jid=$1
-  dbg "./aw-alert.sh -y $timeout -t \"$title\" -m \"New message from $jid.\" -w 700"
-  $AW_ALERT -y $timeout -t "$title" -m "New message from $jid." -w 700
+  dbg "./aw-alert.sh -s 1 -y $timeout -t \"$title\" -m \"New message from $jid.\" -w 700"
+  $AW_ALERT -s 1 -y $timeout -t "$title" -m "New message from $jid." -w 700
 }
 
 status_message() {
   local jid=$1
   local status=$2
-  dbg "./aw-alert.sh -y $timeout -t \"$title\" -m \"Status changed for $jid to $status.\" -w 700"
-  $AW_ALERT -y $timeout -t "$title" -m "Status changed for $jid to $status." -w 700
+  dbg "./aw-alert.sh -s 1 -y $timeout -t \"$title\" -m \"Status changed for $jid to $status.\" -w 700"
+  $AW_ALERT -s 1 -y $timeout -t "$title" -m "Status changed for $jid to $status." -w 700
 }
 
 if [ $event_type = "MSG" ]; then
@@ -74,7 +74,7 @@ if [ $event_type = "MSG" ]; then
   esac
 elif [ $event_type = "STATUS" ]; then
   # Buddy $arg2 status is $arg1 (_, O, I, F, D, N, A)
-  #status_message "$arg2" "$arg1"
+  # status_message "$arg2" "$arg1"
   echo > /dev/null
 elif [ $event_type = "UNREAD" ]; then
   # $arg1 contains 4 numbers separated with space chars:
