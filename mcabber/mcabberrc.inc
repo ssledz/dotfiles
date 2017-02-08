@@ -330,7 +330,7 @@ set eventcmd_use_nickname = 1
 #  lvl 3: debug logging (XML, etc.)
 #  lvl 4: noisy debug logging (Loudmouth parser...)
 # Default is level 0, no trace logging
-set tracelog_level = 4
+set tracelog_level = 1
 set tracelog_file = ~/.mcabber/mcabber.log
 
 # Set the auto-away timeout, in seconds.  If set to a value >0,
