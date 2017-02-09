@@ -1,0 +1,9 @@
+source ~/.mcabber/mcabberrc.inc
+set jid = slawkoo83@chat.facebook.com
+set server = chat.facebook.com
+set ssl = 0
+set tls = 0
+set ssl_ignore_checks = 1
+set port = 5222
+set tracelog_level = 4
+
