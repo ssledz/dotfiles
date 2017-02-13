@@ -23,7 +23,7 @@ show_help() {
 
   Usage: ${0##*/} -t title -m message -y timeout -s screen -b background -f foreground -n margin -w width [-d] [-h]
 
-  Deploy adserver-active.
+  Make notification in awesome wm.
 
   -t tile                     Title.
   -m message
