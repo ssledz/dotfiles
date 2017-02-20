@@ -9,7 +9,7 @@ exec >> $LOG 2>&1
 DBG=0
 
 dbg() {
-  [[ $DBG == 0 ]] && echo "[DEBUG] : "$1
+  [[ $DBG == 1 ]] && echo "[DEBUG] : "$1
 }
 
 info() {
