@@ -111,6 +111,10 @@ if has('gui_running')
   set guifont=Monospace\ 16
 endif
 
+if filereadable($HOME . "/.vim.abbr")
+  source ~/.vim.abbr
+endif
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local

@@ -1,0 +1,3 @@
+abbr _sh #!/bin/bash
+abbr _for for i in $(seq 1 5); do echo $i; done
+abbr _if if [[ $var == "test" ]]; then echo "var is test"; else echo "var is not test"; fi
