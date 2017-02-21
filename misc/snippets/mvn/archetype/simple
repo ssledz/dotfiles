@@ -1,0 +1,5 @@
+mvn -B archetype:generate \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DgroupId=com.mycompany.app \
+  -DarchetypeArtifactId=maven-archetype-quickstart \
+  -DartifactId=my-app

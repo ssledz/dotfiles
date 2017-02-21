@@ -1,0 +1,1 @@
+mvn assembly:single -DdescriptorId=jar-with-dependencies
