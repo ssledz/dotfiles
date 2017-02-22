@@ -1,4 +1,3 @@
-source ~/.mcabber/mcabberrc.local
 # Note about this file syntax:
 # - Leading and trailing spaces are ignored.
 # - Empty lines and lines beginning with a '#' are ignored.
