@@ -15,7 +15,8 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 
 " Filesystem explorer
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
+Plugin 'francoiscabrol/ranger.vim'
 " A Personal Wiki For Vim
 Plugin 'vimwiki/vimwiki'
 " Lightweight Toolbox for LaTeX
