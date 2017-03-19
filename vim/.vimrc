@@ -3,15 +3,6 @@ set lazyredraw
 
 let $PATH='/usr/local/bin:' . $PATH
 
-" Leader Mappings
-map <Space> <leader>
-" Clear out a search by typing <leader>/
-nnoremap <Leader>/ :noh<CR>
-
-" Toggle nerdtree with F10
-map <F10> :NERDTreeToggle<CR>
-" Current file in nerdtree
-map <F9> :NERDTreeFind<CR>
 
 " highlight vertical column of cursor
 au WinLeave * set nocursorline nocursorcolumn
@@ -115,9 +106,63 @@ if filereadable($HOME . "/.vim.abbr")
   source ~/.vim.abbr
 endif
 
+" Fix screen's key bindings.
+"
+" showkey -a
+"
+if &term == "screen-256color"
+  map <Esc>[D           <C-Left>
+  map <Esc>[C           <C-Right>
+  map <Esc><Esc>OP      <A-F1>
+  map <Esc><Esc>OQ      <A-F2>
+  map <Esc><Esc>OR      <A-F3>
+  map <Esc><Esc>OS      <A-F4>
+  map <Esc><Esc>15~     <A-F5>
+  map <Esc><Esc>[17~    <A-F6>
+  map <Esc><Esc>[18~    <A-F7>
+  map <Esc><Esc>[19~    <A-F8>
+  map <Esc><Esc>[20~    <A-F9>
+  map <Esc><Esc>[21~    <A-F10>
+  map <Esc><Esc>[23~    <A-F11>
+  map <Esc><Esc>[24~    <A-F12>
+  map <Esc><Esc>[5~     <A-PageUp>
+  map <Esc><Esc>[6~     <A-PageDown>
+
+
+endif
+
+" Mappings
+"
+"
+" Leader Mappings
+map <Space> <leader>
+" Clear out a search by typing <leader>/
+nnoremap <Leader>/ :noh<CR>
+
+map <leader>f :Ranger<CR>
+
+" Tab navigation
+nnoremap <C-S-t> :tabnew<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <A-Left> :tabprevious<CR>
+nnoremap <C-RighT> :tabnext<CR>
+nnoremap <C-S-w> <ESC>:tabclose<CR>
+inoremap <C-S-t> <ESC>:tabnew<CR>
+inoremap <C-S-w> <ESC>:tabclose<CR>
+nnoremap <A-F1> 1gt
+nnoremap <A-F2> 2gt
+nnoremap <A-F3> 3gt
+nnoremap <A-F4> 4gt
+nnoremap <A-F5> 5gt
+nnoremap <A-F6> 6gt
+nnoremap <A-F7> 7gt
+nnoremap <A-F8> 8gt
+nnoremap <A-F9> 9gt
+nnoremap <A-F0> 10gt
+nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
-
-
