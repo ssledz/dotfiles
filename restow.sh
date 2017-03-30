@@ -6,4 +6,4 @@ stow -R -v -t ~/.mcabber mcabber
 stow -R -v -t ~/ octave
 stow -R -v -t ~/ misc
 stow -R -v -t ~/.config/ranger ranger
-stow -R -v -t ~/.config xdg
+stow -R -v -t ~/ xdg
