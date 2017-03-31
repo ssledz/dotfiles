@@ -1,0 +1,18 @@
+  input="a"
+
+  case "$input" in
+
+    a|*ab)
+
+      echo "a|*ab"
+
+      ;;
+    "b")
+
+      echo "b"
+
+      ;;
+    *)
+      echo "c"
+      ;;
+  esac
