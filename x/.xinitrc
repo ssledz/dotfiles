@@ -68,6 +68,7 @@ esac
 urxvtd -q -f -o
 dropbox start &
 xscreensaver -no-splash &
+nm-applet --sm-disable &
 # }}}
 
 exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr

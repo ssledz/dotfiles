@@ -142,13 +142,10 @@ nnoremap <Leader>/ :noh<CR>
 map <leader>f :Ranger<CR>
 
 " Tab navigation
-nnoremap <C-S-t> :tabnew<CR>
+nnoremap <C-n> :tabnew<CR>
+nnoremap <C-m> :tabclose<CR>
 nnoremap <C-Left> :tabprevious<CR>
-nnoremap <A-Left> :tabprevious<CR>
 nnoremap <C-RighT> :tabnext<CR>
-nnoremap <C-S-w> <ESC>:tabclose<CR>
-inoremap <C-S-t> <ESC>:tabnew<CR>
-inoremap <C-S-w> <ESC>:tabclose<CR>
 nnoremap <A-F1> 1gt
 nnoremap <A-F2> 2gt
 nnoremap <A-F3> 3gt
