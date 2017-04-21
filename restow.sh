@@ -1,9 +1,27 @@
-#!/bin/sh
+#!/bin/bash
 
-stow -R -v -t ~/ bash common functions git tmux vim zsh x
+conf_file=~/.dotfiles
+default_profile=priv
+
+
+profile() {
+  local profile
+  if [ -e $conf_file ]; then
+    profile=$(cat $conf_file | grep -v '^#' | grep '^profile=' | cut -d '=' -f 2)
+  fi
+  [[ -z $profile ]] && echo $default_profile || echo $profile
+}
+
+
+profile=$(profile)
+
+echo "Active profile : $profile"
+
+stow -R -v -t ~/ -d git $profile
+stow -R -v -t ~/ -d xdg $profile
+stow -R -v -t ~/ bash common functions tmux vim zsh x
 stow -R -v -t ~/.config/awesome awesome
 stow -R -v -t ~/.mcabber mcabber
 stow -R -v -t ~/ octave
 stow -R -v -t ~/ misc
 stow -R -v -t ~/.config/ranger ranger
-stow -R -v -t ~/ xdg
