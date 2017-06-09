@@ -8,3 +8,5 @@ mc_wrapper=$(locate mc-wrapper.sh | head -1)
 if [[ ! -z $mc_wrapper ]]; then
  alias mc=". $mc_wrapper"
 fi
+
+alias nautilus='nautilus --no-desktop'
