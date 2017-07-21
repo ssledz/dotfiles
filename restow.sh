@@ -12,6 +12,9 @@ profile() {
   [[ -z $profile ]] && echo $default_profile || echo $profile
 }
 
+mkdir -p ~/acpi
+mkdir -p ~/utils
+
 
 profile=$(profile)
 
@@ -25,3 +28,5 @@ stow -R -v -t ~/.mcabber mcabber
 stow -R -v -t ~/ octave
 stow -R -v -t ~/ misc
 stow -R -v -t ~/.config/ranger ranger
+stow -R -v -t ~/acpi acpi
+stow -R -v -t ~/utils utils
