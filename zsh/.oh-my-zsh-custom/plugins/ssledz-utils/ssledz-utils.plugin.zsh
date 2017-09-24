@@ -16,6 +16,10 @@ alias ds-mount-download='mount-cifs-ssledz //ds/downloads'
 alias ds-mount-download-mnt='ds-mount-download /mnt'
 alias ds-mount-home='mount-cifs-ssledz //ds/homes/ssledz'
 alias ds-mount-home-mnt='ds-mount-home /mnt'
+alias ds-mount-video='mount-cifs-ssledz //ds/video'
+alias ds-mount-video-mnt='ds-mount-video /mnt'
+
+
 alias -g NULL="> /dev/null 2>&1"
 
 alias sc-suspend='sudo systemctl suspend'

@@ -31,7 +31,7 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 ! Perl extensions
-URxvt.perl-ext-common:      default,matcher
+URxvt.perl-ext-common:      default,matcher,font-size
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 

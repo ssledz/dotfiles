@@ -30,3 +30,4 @@ stow -R -v -t ~/ misc
 stow -R -v -t ~/.config/ranger ranger
 stow -R -v -t ~/acpi acpi
 stow -R -v -t ~/utils utils
+stow -R -v -t ~/.urxvt urxvt
