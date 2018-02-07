@@ -119,4 +119,4 @@ msg="local naughty = require(\"naughty\"); naughty.notify({ \
   width = $width,\
   run = function (notification) notification.die() end })"
 
-echo -e $msg | /usr/bin/awesome-client -
+echo -e "$msg" | /usr/bin/awesome-client
