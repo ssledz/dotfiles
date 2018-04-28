@@ -14,6 +14,7 @@ profile() {
 
 mkdir -p ~/acpi
 mkdir -p ~/utils
+mkdir -p ~/.config/i3
 
 
 profile=$(profile)
@@ -31,3 +32,4 @@ stow -R -v -t ~/.config/ranger ranger
 stow -R -v -t ~/acpi acpi
 stow -R -v -t ~/utils utils
 stow -R -v -t ~/.urxvt urxvt
+stow -R -v -t ~/.config/i3/ i3wm
