@@ -38,7 +38,7 @@ exec --no-startup-id /usr/bin/nm-applet --sm-disable        # network manager
 exec --no-startup-id /usr/bin/pasystray                     # volume control
 exec --no-startup-id /usr/bin/blueman-applet                # bluetooth manager
 exec urxvt -name scratchpad
-exec urxvt -name mcabber  -c "mcabber"
+exec urxvt -name mcabber -e zsh -c "/usr/bin/mcabber"
 
 
 
@@ -128,7 +128,7 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace $ws8 
+bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 bindsym $mod+Escape workspace back_and_forth
@@ -218,7 +218,6 @@ for_window [class="^Firefox$"] border none
 # finds out, if available)
 bar {
         status_command i3status
-#        status_command exec ~/.config/i3scripts/net-speed.sh
         tray_output primary
 }
 
@@ -229,4 +228,6 @@ bindsym $mod+b bar mode toggle
 bindsym $mod+m move scratchpad
 bindsym $mod+grave scratchpad show
 
+# autostart
 
+exec /usr/bin/google-chrome
