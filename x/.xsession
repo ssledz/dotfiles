@@ -1,1 +1,3 @@
-.xinitrc
+#!/bin/bash
+
+~/.xinitrc i3

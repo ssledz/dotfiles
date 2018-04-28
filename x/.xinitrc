@@ -65,11 +65,18 @@ esac
 
 # {{{ Autostart settings
 #
-urxvtd -q -f -o
-dropbox start &
-xscreensaver -no-splash &
-nm-applet --sm-disable &
-~/acpi/acpi-listen.sh &
 # }}}
 
-exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+case "$1" in 
+  "awesome")
+    urxvtd -q -f -o
+    nm-applet --sm-disable &
+    dropbox start &
+    xscreensaver -no-splash &
+    ~/acpi/acpi-listen.sh &
+    exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+    ;;
+  "i3")
+    exec i3
+    ;;
+esac
