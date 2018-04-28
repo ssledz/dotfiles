@@ -1,12 +1,11 @@
 #!/bin/bash
 
-AW_ALERT=~/.mcabber/aw-alert.sh
 LOG=~/.mcabber/eventcmd.log
 EVENT_LOG=~/.mcabber/event.log
 
 exec >> $LOG 2>&1
 
-DBG=0
+DBG=1
 
 dbg() {
   [[ $DBG == 1 ]] && echo "[DEBUG] : "$1
@@ -40,15 +39,14 @@ timeout=10000
 
 new_message_in() {
   local jid=$1
-  dbg "./aw-alert.sh -s 1 -y $timeout -t \"$title\" -m \"New message from $jid.\" -w 700"
-  $AW_ALERT -s 1 -y $timeout -t "$title" -m "New message from $jid." -w 700
+  dbg  "$title : New message from $jid."
+  notify-send -u low "$title" "New message from $jid."
 }
 
 status_message() {
   local jid=$1
   local status=$2
-  dbg "./aw-alert.sh -s 1 -y $timeout -t \"$title\" -m \"Status changed for $jid to $status.\" -w 700"
-  $AW_ALERT -s 1 -y $timeout -t "$title" -m "Status changed for $jid to $status." -w 700
+  notify-send -u low "$title" "Status changed for $jid to $status."
 }
 
 if [ $event_type = "MSG" ]; then
