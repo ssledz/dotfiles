@@ -38,6 +38,14 @@ sysresources="/etc/X11/xinit/.Xresources"
 # Keyboard control, repeat delay and repeat rate
 xset r rate 200 30
 
+# http://blog.ssokolow.com/archives/2011/12/24/getting-your-way-with-setxkbmap/
+setxkbmap -option \
+  -option compose:rctrl \
+  -option lv3:ralt_switch \
+  -option terminate:ctrl_alt_bkspc \
+  -option eurosign:e \
+  -option nbsp:level3n
+
 # Pointer control, acceleration and threshold
 xset m 30/10 4
 
@@ -46,7 +54,7 @@ xset m 30/10 4
 xsetroot -cursor_name left_ptr
 
 # Disable the touchpad while typing
-#syndaemon -k -i 2 -d &
+syndaemon -k -i 2 -d &
 # }}}
 
 # {{{ Display settings

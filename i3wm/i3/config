@@ -28,6 +28,7 @@ font pango:monospace 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
+#focus_follows_mouse no
 
 # starting apps
 exec --no-startup-id /usr/bin/feh --bg-scale ~/Dropbox/wallpapers/system-hierarchy.png  # setting wallpaper
@@ -40,6 +41,7 @@ exec --no-startup-id /usr/bin/blueman-applet                # bluetooth manager
 exec urxvt -name scratchpad
 exec urxvt -name mcabber -e zsh -c "/usr/bin/mcabber"
 
+exec --no-startup-id /usr/bin/gxkb
 
 
 # start a terminal
