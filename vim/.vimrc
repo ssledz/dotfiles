@@ -139,7 +139,11 @@ map <Space> <leader>
 " Clear out a search by typing <leader>/
 nnoremap <Leader>/ :noh<CR>
 
+" vimwiki
+" <Leader>ww
+
 map <leader>f :Ranger<CR>
+map <leader>r :Ranger<CR>
 
 " Tab navigation
 nnoremap <C-n> :tabnew<CR>
@@ -158,6 +162,14 @@ nnoremap <A-F9> 9gt
 nnoremap <A-F0> 10gt
 nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+
+
+" vimwiki
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'bash': 'bash'}
+let g:vimwiki_list = [wiki]
+
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

@@ -35,3 +35,8 @@ hash -d dot=$HOME/dotfiles
 
 bindkey '^Q' push-line-or-edit
 bindkey '^R' history-incremental-search-backward
+
+# haskell stack shell auto-completion
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
