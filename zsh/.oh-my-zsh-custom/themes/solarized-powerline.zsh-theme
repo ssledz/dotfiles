@@ -1,0 +1,1 @@
+solarized-powerline/solarized-powerline.zsh-theme
