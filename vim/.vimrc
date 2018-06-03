@@ -170,6 +170,9 @@ let wiki.path = '~/vimwiki/'
 let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'bash': 'bash'}
 let g:vimwiki_list = [wiki]
 
+" haskell
+" enable completion enginesi driven by YouCompleteMe
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
