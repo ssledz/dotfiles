@@ -39,6 +39,7 @@ set expandtab
 
 " Color scheme
 syntax enable
+set t_Co=256
 colorscheme solarized
 set background=dark
 
@@ -99,7 +100,8 @@ set splitright
 
 " Font
 if has('gui_running')
-  set guifont=Monospace\ 16
+  " set guifont=Monospace\ 16
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 17
 endif
 
 if filereadable($HOME . "/.vim.abbr")
@@ -163,6 +165,22 @@ nnoremap <A-F0> 10gt
 nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
+" airline-theme
+"let g:airline_theme='badwolf'
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1    
+let g:airline_powerline_fonts = 1
+"let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+let g:airline_solarized_bg='dark'
+"if !exists('g:airline_symbols')
+"  let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.space = "\ua0"
+
+" powerline
+"set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
+"let g:Powerline_theme='short'
+"let g:Powerline_colorscheme='solarized256_dark'
 
 " vimwiki
 let wiki = {}

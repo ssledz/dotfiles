@@ -22,7 +22,7 @@ URxvt.allow_bold:           false
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
 ! URxvt*font: xft:Monospace:pixelsize=16
 ! URxvt*font: xft:Source\ Code\ Pro\ for\ Powerline,Source\ Code\ Pro\ Medium:pixelsize=16
-URxvt*font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=16
+URxvt*font: xft:DejaVu\ Sans\ Mono\ for\ Powerline:pixelsize=17
 URxvt*boldFont: xft:Monospace:pixelsize=16
 
 ! Fix font space
