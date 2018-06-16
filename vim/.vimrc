@@ -191,6 +191,14 @@ let g:vimwiki_list = [wiki]
 " haskell
 " enable completion enginesi driven by YouCompleteMe
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:haskellmode_completion_ghc = 0
+let g:necoghc_enable_detailed_browse = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+"
+"" File indentation settings
+"
+au FileType csv setl sts=4 noexpandtab
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
