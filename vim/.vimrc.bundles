@@ -33,10 +33,6 @@ Plugin 'eagletmt/neco-ghc'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'tmux-plugins/vim-tmux'
-"Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-"Plugin 'stephenmckinney/vim-solarized-powerline'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jreybert/vimagit'
 
 
