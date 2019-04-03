@@ -7,3 +7,6 @@
 [submodule "zsh/.oh-my-zsh-custom/themes/solarized-powerline"]
 	path = zsh/.oh-my-zsh-custom/themes/solarized-powerline
 	url = https://github.com/houjunchen/solarized-powerline.git
+[submodule "zsh/.oh-my-zsh"]
+	path = zsh/.oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
