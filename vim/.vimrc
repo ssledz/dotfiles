@@ -40,7 +40,10 @@ set expandtab
 " Color scheme
 syntax enable
 set t_Co=256
-colorscheme solarized
+try
+  colorscheme solarized
+catch
+endtry
 set background=dark
 
 " Highlight line number of where cursor currently is
