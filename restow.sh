@@ -15,7 +15,10 @@ profile() {
 mkdir -p ~/acpi
 mkdir -p ~/utils
 mkdir -p ~/.tmux/plugins
-
+mkdir -p ~/.urxvt
+mkdir -p ~/.config/ranger
+mkdir -p ~/.config/awesome
+mkdir -p ~/.mcabber
 
 profile=$(profile)
 
