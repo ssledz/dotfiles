@@ -63,7 +63,7 @@ case "$(hostname)" in
     xrandr --output HDMI1 --auto --output HDMI2 --auto --right-of HDMI1
     ;;
   sigma)
-    xrandr --output eDP1 --mode 1600x900 --primary
+    xrandr --output eDP-1 --mode 1600x900 --primary
     ;;
 esac
 
