@@ -127,3 +127,5 @@
 #https://raw.githubusercontent.com/jakubnabrdalik/gitkurwa/master/config
 [credential]
 	helper = cache
+[pager]
+	branch = false
