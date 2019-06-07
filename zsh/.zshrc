@@ -47,7 +47,8 @@ ZSH_THEME="ssledz"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.oh-my-zsh-custom
 
-ZSH_TMUX_AUTOSTART=true
+[[ -z $ZSH_TMUX_AUTOSTART ]] && ZSH_TMUX_AUTOSTART=true
+#ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 ZSH_TMUX_AUTOCONNECT=false
 
