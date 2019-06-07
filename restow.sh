@@ -25,8 +25,8 @@ profile=$(profile)
 
 echo "Active profile : $profile"
 
-stow -R -v -t ~/ -d git $profile
-stow -R -v -t ~/ -d xdg $profile
+stow --override=* -R -v -t ~/ -d git $profile
+stow --override=* -R -v -t ~/ -d xdg $profile
 stow -R -v -t ~/ bash common functions tmux vim zsh x
 stow -R -v -t ~/.config/awesome awesome
 stow -R -v -t ~/.mcabber mcabber
