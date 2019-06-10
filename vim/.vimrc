@@ -171,6 +171,9 @@ nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 " vimwiki
 let wiki = {}
 let wiki.path = '~/vimwiki/'
+if len($WIKI_PATH) > 0
+  let wiki.path = $WIKI_PATH
+endif
 let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'bash': 'bash'}
 let g:vimwiki_list = [wiki]
 
