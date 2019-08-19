@@ -30,7 +30,8 @@ _jenv_init() {
       jenv_bin=${jenv_dir}/bin
       export PATH=${jenv_bin}:$PATH
       #set shell to zzsh to prevent embedded completion for jenv
-      eval "$(jenv init - zzsh)"
+      #eval "$(jenv init - zzsh)"
+      eval "$(jenv init -)"
     fi
   done
 }
