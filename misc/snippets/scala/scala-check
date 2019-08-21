@@ -8,3 +8,6 @@ http://www.scalastyle.org/configuration.html
 
 // scalastyle:off magic.number
 // scalastyle:on magic.number
+
+// scalastyle:off regex
+// scalastyle:on regex
