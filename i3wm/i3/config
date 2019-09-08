@@ -39,7 +39,7 @@ exec --no-startup-id /usr/bin/nm-applet --sm-disable        # network manager
 exec --no-startup-id /usr/bin/pasystray                     # volume control
 exec --no-startup-id /usr/bin/blueman-applet                # bluetooth manager
 exec urxvt -name scratchpad
-exec urxvt -name mcabber -e zsh -c "/usr/bin/mcabber"
+#exec urxvt -name mcabber -e zsh -c "/usr/bin/mcabber"
 
 exec --no-startup-id /usr/bin/gxkb
 

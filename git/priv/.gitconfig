@@ -110,6 +110,7 @@
 [core]
     pager = less -r
     editor = vim
+	autocrlf = input
 [help]
     autocorrect = 1 #fucking magic!
 [diff]

@@ -66,7 +66,7 @@ case "$(hostname)" in
     xrandr --output eDP-1 --mode 1600x900 --primary
     ;;
   ssledz-desktop)
-    xrandr --output HDMI-1 --mode 2560x1440 --primary
+    xrandr --output HDMI-0 --mode 2560x1440 --primary
     ;;
 esac
 
