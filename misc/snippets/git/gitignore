@@ -1,1 +1,1 @@
-gi java maven eclipse intellij+iml,git,gradle >> .gitignore
+gi java,maven,eclipse,intellij+iml,git,gradle >> .gitignore
