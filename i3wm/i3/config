@@ -42,6 +42,7 @@ exec urxvt -name scratchpad
 #exec urxvt -name mcabber -e zsh -c "/usr/bin/mcabber"
 
 exec --no-startup-id /usr/bin/gxkb
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
 
 # start a terminal
@@ -205,6 +206,11 @@ mode "$mode_system" {
 }
 
 bindsym $mod+BackSpace mode "$mode_system"
+
+# scrot & gimp - root
+bindsym Print exec scrot -u -e 'mv $f /tmp/ && xdg-open /tmp/$f'
+# scrot & gimp - select window or rectangle
+bindsym --release  $mod+Print exec scrot -s -e 'mv $f /tmp/ && xdg-open /tmp/$f'
 
 # workspace assignment
 assign [class="^Google-chrome$"] $ws2
