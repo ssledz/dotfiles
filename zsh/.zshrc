@@ -48,15 +48,16 @@ ZSH_THEME="ssledz"
 ZSH_CUSTOM=~/.oh-my-zsh-custom
 
 [[ -z $ZSH_TMUX_AUTOSTART ]] && ZSH_TMUX_AUTOSTART=true
-#ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 ZSH_TMUX_AUTOCONNECT=false
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=255,bold"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git jenv rbenv svn gitignore ubuntu ant sbt scala mvn cp battery history rsync tmux vagrant vi-mode vim-interaction web-search systemd ssledz-utils)
+plugins=(git jenv rbenv gitignore tmux ssledz-utils zsh-autosuggestions)
 
 # User configuration
 
@@ -99,3 +100,4 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
