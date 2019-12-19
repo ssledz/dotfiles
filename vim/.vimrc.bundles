@@ -27,6 +27,10 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ekalinin/Dockerfile.vim'
+
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
 " haskell stuff
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'eagletmt/neco-ghc'

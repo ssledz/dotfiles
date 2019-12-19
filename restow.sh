@@ -39,3 +39,4 @@ stow -R -v -t ~/.urxvt urxvt
 stow -R -v -t ~/.config i3wm
 
 vim +PluginInstall +qall
+cd ~/.vim/bundle/fzf && ./install --all
