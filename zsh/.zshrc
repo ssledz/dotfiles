@@ -51,7 +51,6 @@ ZSH_CUSTOM=~/.oh-my-zsh-custom
 ZSH_TMUX_AUTOQUIT=false
 ZSH_TMUX_AUTOCONNECT=false
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=255,bold"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -59,7 +58,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=255,bold"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git jenv rbenv gitignore tmux ssledz-utils zsh-autosuggestions)
 
+
 # User configuration
+#
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=1,bold"
 
 # Any pattern that does not match is passed as a literal argument to the command (like in Bash)
 setopt NO_NOMATCH
