@@ -6,7 +6,7 @@
 [push]
     default = tracking
 [color]
-    ui = auto
+	ui = auto
 [color "branch"]
     current = yellow reverse
     local = yellow
@@ -111,6 +111,7 @@
     pager = less -r
     editor = vim
 	autocrlf = input
+	abbrev = 8
 [help]
     autocorrect = 1 #fucking magic!
 [diff]
@@ -127,3 +128,5 @@
 #https://raw.githubusercontent.com/jakubnabrdalik/gitkurwa/master/config
 [credential]
 	helper = cache
+[log]
+	abbrevCommit = yes
