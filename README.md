@@ -9,6 +9,10 @@ sudo apt-get install stow
 git clone --recursive git@github.com:ssledz/dotfiles.git
 ```
 
+```
+git submodule update --init --recursive
+```
+
 ## adding new module
 ```
 cd dotfiles
