@@ -19,23 +19,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'francoiscabrol/ranger.vim'
 " A Personal Wiki For Vim
 Plugin 'vimwiki/vimwiki'
-" Lightweight Toolbox for LaTeX
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
-" haskell stuff
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'eagletmt/ghcmod-vim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'jreybert/vimagit'
 

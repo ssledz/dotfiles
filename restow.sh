@@ -40,3 +40,4 @@ stow -R -v -t ~/.config i3wm
 
 vim +PluginInstall +qall
 cd ~/.vim/bundle/fzf && ./install --all
+cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer

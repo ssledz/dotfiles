@@ -32,10 +32,10 @@ endif
 filetype plugin indent on
 
 " All tabs expand to two spaces
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
+" set expandtab
 
 " Color scheme
 syntax enable
@@ -57,7 +57,7 @@ set foldcolumn=3
 set number
 " Display how far away each line is from the current one, instead of showing
 " the absolute line number
-set relativenumber
+" set relativenumber
 
 set encoding=utf-8
 set autoindent
@@ -84,9 +84,9 @@ set hlsearch
 set spell
 
 " Set textwidth to 120
-set textwidth=120
-set colorcolumn=+1
-highlight ColorColumn ctermbg=lightgrey
+" set textwidth=120
+" set colorcolumn=+1
+" highlight ColorColumn ctermbg=lightgrey
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
@@ -100,6 +100,7 @@ set undoreload=10000
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+set wmh=0
 
 " Font
 if has('gui_running')
@@ -115,26 +116,24 @@ endif
 "
 " showkey -a
 "
-if &term == "screen-256color"
-  map <Esc>[D           <C-Left>
-  map <Esc>[C           <C-Right>
-  map <Esc><Esc>OP      <A-F1>
-  map <Esc><Esc>OQ      <A-F2>
-  map <Esc><Esc>OR      <A-F3>
-  map <Esc><Esc>OS      <A-F4>
-  map <Esc><Esc>15~     <A-F5>
-  map <Esc><Esc>[17~    <A-F6>
-  map <Esc><Esc>[18~    <A-F7>
-  map <Esc><Esc>[19~    <A-F8>
-  map <Esc><Esc>[20~    <A-F9>
-  map <Esc><Esc>[21~    <A-F10>
-  map <Esc><Esc>[23~    <A-F11>
-  map <Esc><Esc>[24~    <A-F12>
-  map <Esc><Esc>[5~     <A-PageUp>
-  map <Esc><Esc>[6~     <A-PageDown>
-
-
-endif
+" if &term == "screen-256color"
+"  map <Esc>[D           <C-Left>
+"  map <Esc>[C           <C-Right>
+"  map <Esc><Esc>OP      <A-F1>
+"  map <Esc><Esc>OQ      <A-F2>
+"  map <Esc><Esc>OR      <A-F3>
+"  map <Esc><Esc>OS      <A-F4>
+"  map <Esc><Esc>15~     <A-F5>
+"  map <Esc><Esc>[17~    <A-F6>
+"  map <Esc><Esc>[18~    <A-F7>
+"  map <Esc><Esc>[19~    <A-F8>
+"  map <Esc><Esc>[20~    <A-F9>
+"  map <Esc><Esc>[21~    <A-F10>
+"  map <Esc><Esc>[23~    <A-F11>
+"  map <Esc><Esc>[24~    <A-F12>
+"  map <Esc><Esc>[5~     <A-PageUp>
+"  map <Esc><Esc>[6~     <A-PageDown>
+"endif
 
 " Mappings
 "
@@ -147,26 +146,13 @@ nnoremap <Leader>/ :noh<CR>
 " vimwiki
 " <Leader>ww
 
-map <leader>f :Ranger<CR>
 map <leader>r :Ranger<CR>
 
 " Tab navigation
-nnoremap <C-n> :tabnew<CR>
-nnoremap <C-m> :tabclose<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-RighT> :tabnext<CR>
-nnoremap <A-F1> 1gt
-nnoremap <A-F2> 2gt
-nnoremap <A-F3> 3gt
-nnoremap <A-F4> 4gt
-nnoremap <A-F5> 5gt
-nnoremap <A-F6> 6gt
-nnoremap <A-F7> 7gt
-nnoremap <A-F8> 8gt
-nnoremap <A-F9> 9gt
-nnoremap <A-F0> 10gt
-nnoremap <silent> <A-PageUp> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-PageDown> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+nnoremap <C-c> :tabnew<CR>
+nnoremap <C-x> :tabclose<CR>
+nnoremap <C-j> :tabprevious<CR>
+nnoremap <C-k> :tabnext<CR>
 
 " vimwiki
 let wiki = {}
