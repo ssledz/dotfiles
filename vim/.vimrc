@@ -112,32 +112,10 @@ if filereadable($HOME . "/.vim.abbr")
   source ~/.vim.abbr
 endif
 
-" Fix screen's key bindings.
-"
-" showkey -a
-"
-" if &term == "screen-256color"
-"  map <Esc>[D           <C-Left>
-"  map <Esc>[C           <C-Right>
-"  map <Esc><Esc>OP      <A-F1>
-"  map <Esc><Esc>OQ      <A-F2>
-"  map <Esc><Esc>OR      <A-F3>
-"  map <Esc><Esc>OS      <A-F4>
-"  map <Esc><Esc>15~     <A-F5>
-"  map <Esc><Esc>[17~    <A-F6>
-"  map <Esc><Esc>[18~    <A-F7>
-"  map <Esc><Esc>[19~    <A-F8>
-"  map <Esc><Esc>[20~    <A-F9>
-"  map <Esc><Esc>[21~    <A-F10>
-"  map <Esc><Esc>[23~    <A-F11>
-"  map <Esc><Esc>[24~    <A-F12>
-"  map <Esc><Esc>[5~     <A-PageUp>
-"  map <Esc><Esc>[6~     <A-PageDown>
-"endif
-
 " Mappings
 "
 "
+
 " Leader Mappings
 map <Space> <leader>
 " Clear out a search by typing <leader>/
@@ -151,8 +129,16 @@ map <leader>r :Ranger<CR>
 " Tab navigation
 nnoremap <C-c> :tabnew<CR>
 nnoremap <C-x> :tabclose<CR>
-nnoremap <C-j> :tabprevious<CR>
-nnoremap <C-k> :tabnext<CR>
+nnoremap <Esc><Left> :tabprevious<CR>
+nnoremap <Esc><Right> :tabnext<CR>
+nnoremap <Esc><TAB> :tabnext<CR>
+nnoremap <C-p> :Files<Cr>
+nnoremap <C-N> :Files<Cr>
+nnoremap <F3> :source %<CR>
+nnoremap <silent> <Esc>k :wincmd k<CR>
+nnoremap <silent> <Esc>j :wincmd j<CR>
+nnoremap <silent> <Esc>h :wincmd h<CR>
+nnoremap <silent> <Esc>l :wincmd l<CR>
 
 " vimwiki
 let wiki = {}

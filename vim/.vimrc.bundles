@@ -20,7 +20,7 @@ Plugin 'francoiscabrol/ranger.vim'
 " A Personal Wiki For Vim
 Plugin 'vimwiki/vimwiki'
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Valloric/YouCompleteMe'
 
