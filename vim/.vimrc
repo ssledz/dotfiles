@@ -129,16 +129,25 @@ map <leader>r :Ranger<CR>
 " Tab navigation
 nnoremap <C-c> :tabnew<CR>
 nnoremap <C-x> :tabclose<CR>
-nnoremap <Esc><Left> :tabprevious<CR>
-nnoremap <Esc><Right> :tabnext<CR>
-nnoremap <Esc><TAB> :tabnext<CR>
+nnoremap <A-j> :tabprevious<CR>
+nnoremap <A-k> :tabnext<CR>
+nnoremap <A-`> :tabnext<CR>
+nnoremap <A-1> 1gt<CR>
+nnoremap <A-2> 2gt<CR>
+nnoremap <A-3> 3gt<CR>
+nnoremap <A-4> 4gt<CR>
+nnoremap <A-5> 5gt<CR>
+nnoremap <A-6> 6gt<CR>
+nnoremap <A-7> 7gt<CR>
+nnoremap <A-8> 8gt<CR>
+nnoremap <A-9> 9gt<CR>
+nnoremap <A-0> 10gt<CR>
+nnoremap <silent> <A-%> :vsplit<Cr>
+nnoremap <silent> <A-"> :split<Cr>
+nnoremap <silent> <A-q> :q<Cr>
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-N> :Files<Cr>
 nnoremap <F3> :source %<CR>
-nnoremap <silent> <Esc>k :wincmd k<CR>
-nnoremap <silent> <Esc>j :wincmd j<CR>
-nnoremap <silent> <Esc>h :wincmd h<CR>
-nnoremap <silent> <Esc>l :wincmd l<CR>
 
 " vimwiki
 let wiki = {}
