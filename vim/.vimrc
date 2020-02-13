@@ -55,9 +55,6 @@ set foldcolumn=3
 
 " Number
 set number
-" Display how far away each line is from the current one, instead of showing
-" the absolute line number
-" set relativenumber
 
 set encoding=utf-8
 set autoindent
@@ -83,11 +80,6 @@ set hlsearch
 " Switch on spell
 set spell
 
-" Set textwidth to 120
-" set textwidth=120
-" set colorcolumn=+1
-" highlight ColorColumn ctermbg=lightgrey
-
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
@@ -111,6 +103,8 @@ endif
 if filereadable($HOME . "/.vim.abbr")
   source ~/.vim.abbr
 endif
+
+let g:airline_theme='term'
 
 " Mappings
 "
