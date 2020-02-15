@@ -56,7 +56,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git jenv rbenv gitignore tmux ssledz-utils zsh-autosuggestions)
+plugins=(git rbenv gitignore tmux ssledz-utils zsh-autosuggestions jenv)
 
 
 # User configuration
