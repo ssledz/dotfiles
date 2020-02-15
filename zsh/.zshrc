@@ -68,38 +68,32 @@ setopt NO_NOMATCH
 
 autoload zmv
 
-[[ -s "$HOME/.env_variables" ]] && source "$HOME/.env_variables"
-
-[[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
+if [ -f ~/.env_variables ]; then
+    source ~/.env_variables
+fi
 
 source $ZSH/oh-my-zsh.sh
-
-#init nodenv
-[[ -s "$HOME/.nodenv/bin/nodenv" ]] && eval "$(nodenv init -)"
-
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
 
 if [ -f ~/.zsh_aliases ]; then
     source ~/.zsh_aliases
 fi
 
+# Local config
+
 if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
+
+[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
