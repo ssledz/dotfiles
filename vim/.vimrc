@@ -32,9 +32,9 @@ endif
 filetype plugin indent on
 
 " All tabs expand to two spaces
-" set tabstop=2
-" set shiftwidth=2
-" set softtabstop=2
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 " set expandtab
 
 " Color scheme
