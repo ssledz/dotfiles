@@ -36,7 +36,7 @@ set tabstop=8
 set shiftwidth=4
 set softtabstop=4
 set noexpandtab
-" set expandtab
+set expandtab
 
 " Color scheme
 syntax enable
@@ -159,6 +159,9 @@ let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:haskellmode_completion_ghc = 0
 let g:necoghc_enable_detailed_browse = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
+
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 "
 "" File indentation settings
