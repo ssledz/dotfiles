@@ -33,11 +33,11 @@ floating_modifier $mod
 # starting apps
 exec --no-startup-id /usr/bin/feh --bg-scale ~/Dropbox/wallpapers/system-hierarchy.png  # setting wallpaper
 exec --no-startup-id /usr/bin/urxvtd -q -f -o               # urxvtd
-exec --no-startup-id /usr/bin/clipit                        # clipit
-exec --no-startup-id /usr/bin/dropbox start -i              # dropbox
+#exec --no-startup-id /usr/bin/clipit                        # clipit
+#exec --no-startup-id /usr/bin/dropbox start -i              # dropbox
 exec --no-startup-id /usr/bin/nm-applet --sm-disable        # network manager
 exec --no-startup-id /usr/bin/pasystray                     # volume control
-exec --no-startup-id /usr/bin/blueman-applet                # bluetooth manager
+#exec --no-startup-id /usr/bin/blueman-applet                # bluetooth manager
 exec urxvt -name scratchpad
 #exec urxvt -name mcabber -e zsh -c "/usr/bin/mcabber"
 
