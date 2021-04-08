@@ -1,6 +1,5 @@
 alias vi='vim'
 alias xclip='xclip -selection c'
-alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
 
 #if wrapper exists then mc would have the ability to exit to its current directory
 mc_wrapper=$(locate mc-wrapper.sh | head -1)
@@ -8,5 +7,3 @@ mc_wrapper=$(locate mc-wrapper.sh | head -1)
 if [[ ! -z $mc_wrapper ]]; then
  alias mc=". $mc_wrapper"
 fi
-
-alias nautilus='nautilus --no-desktop'
