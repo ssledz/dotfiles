@@ -68,6 +68,9 @@ case "$(hostname)" in
   ssledz-desktop)
     xrandr --output HDMI-0 --mode 2560x1440 --primary
     ;;
+  vbox)
+   xrandr --output Virtual1 --mode  2560x1600 --primary
+   ;;
 esac
 
 # Ignore reported display size and force DPI

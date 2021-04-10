@@ -130,3 +130,5 @@
 	helper = cache
 [log]
 	abbrevCommit = yes
+[pager]
+	branch = false
