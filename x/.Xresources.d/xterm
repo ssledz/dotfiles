@@ -2,8 +2,8 @@ XTerm*termName: xterm-256color
 xterm.background: #1C1C1C
 xterm.foreground: #ffffff
 
-xterm*metaSendsEscape: true
-*metaSendsEscape: true
-XTerm.vt100.metaSendsEscape: true
+!xterm*metaSendsEscape: true
+!*metaSendsEscape: true
+!XTerm.vt100.metaSendsEscape: true
 
 
