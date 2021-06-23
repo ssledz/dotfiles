@@ -101,3 +101,9 @@ fi
 [ -f ~/.ghcup/env ] && source ~/.ghcup/env
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && source ~/.nix-profile/etc/profile.d/nix.sh
 
+if [[ $(command -v direnv) ]]; then
+  eval "$(direnv hook zsh)"
+fi
+
+
+
