@@ -31,7 +31,7 @@ endif
 
 filetype plugin indent on
 
-" All tabs expand to two spaces
+" All tabs expand to four spaces
 set tabstop=8
 set shiftwidth=4
 set softtabstop=4
@@ -70,9 +70,6 @@ set wildmode=list:longest
 " Use visual bell instead of beeping
 set visualbell
 
-" Have always a status line
-set laststatus=2
-
 " Highlight search results
 set incsearch
 set showmatch
@@ -107,14 +104,13 @@ endif
 
 let g:airline_theme='term'
 
-" Mappings
-"
-"
 
-" Leader Mappings
+"=================
+" Key mappings
+"=================
+
 map <Space> <leader>
-" Clear out a search by typing <leader>/
-nnoremap <Leader>/ :noh<CR>
+nnoremap <Leader>/ :noh<CR> "Clear out a search by typing <leader>/
 
 " vimwiki
 " <Leader>ww
@@ -153,22 +149,20 @@ endif
 let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'bash': 'bash'}
 let g:vimwiki_list = [wiki]
 
-" haskell
-" enable completion enginesi driven by YouCompleteMe
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
-let g:haskellmode_completion_ghc = 0
-let g:necoghc_enable_detailed_browse = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
+"===================
+" File type settings
+"===================
 
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
-"
-"" File indentation settings
-"
-au FileType csv setl sts=4 noexpandtab
+au FileType csv setl sts=4 noexpandtab " file indentation setting
 
+
+"===============
 " Local config
+"===============
+"
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
