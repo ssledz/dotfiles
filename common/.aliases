@@ -1,5 +1,5 @@
 alias vi='vim'
-alias xclip='xclip -selection c'
+alias xclip='pbcopy'
 
 #if wrapper exists then mc would have the ability to exit to its current directory
 mc_wrapper=$(locate mc-wrapper.sh | head -1)

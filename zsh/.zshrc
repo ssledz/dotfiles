@@ -100,3 +100,8 @@ fi
 [ -f ~/.ghcup/env ] && source ~/.ghcup/env
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && source ~/.nix-profile/etc/profile.d/nix.sh
 
+#export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+
+eval "$(rbenv init -)"
+
+[ -f "/Users/u1089269/.ghcup/env" ] && source "/Users/u1089269/.ghcup/env" # ghcup-env
