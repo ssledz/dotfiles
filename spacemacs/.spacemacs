@@ -44,8 +44,13 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
-     lsp
      haskell
+     (haskell :variables
+               haskell-completion-backend 'lsp
+               haskell-process-suggest-remove-import-lines nil
+               lsp-haskell-process-path-hie "haskell-language-server-wrapper"
+     )
+     lsp
      ;; markdown
      multiple-cursors
      ;; org
@@ -163,7 +168,7 @@ It should only modify the values of Spacemacs settings."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style 'vim
 
    ;; If non-nil show the version string in the Spacemacs buffer. It will
    ;; appear as (spacemacs version)@(emacs version)
@@ -223,7 +228,10 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(solarized-dark
+                         solarized-light
+                         monokai
+                         spacemacs-dark
                          spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -559,3 +567,45 @@ before packages are loaded."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(flycheck-disabled-checkers '(haskell-stack-ghc))
+ '(hl-todo-keyword-faces
+   '(("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2d9574")
+     ("PROG" . "#3a81c3")
+     ("OKAY" . "#3a81c3")
+     ("DONT" . "#f2241f")
+     ("FAIL" . "#f2241f")
+     ("DONE" . "#42ae2c")
+     ("NOTE" . "#b1951d")
+     ("KLUDGE" . "#b1951d")
+     ("HACK" . "#b1951d")
+     ("TEMP" . "#b1951d")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f")))
+ '(lsp-file-watch-threshold 10000)
+ '(lsp-haskell-formatting-provider "stylish-haskell")
+ '(org-fontify-done-headline nil)
+ '(org-fontify-todo-headline nil)
+ '(package-selected-packages
+   '(solarized-theme csv-mode company-lsp nix-mode lsp-haskell monokai-theme lsp-ui helm-company haskell-snippets company-lsp company-cabal))
+ '(pdf-view-midnight-colors '("#655370" . "#fbf8ef")))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
