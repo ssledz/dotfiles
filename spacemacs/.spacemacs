@@ -560,6 +560,8 @@ before packages are loaded."
 
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  ;; iedit mode for smart replacement
+  (define-key evil-insert-state-map (kbd "C-;") 'iedit-mode)
 
   (global-display-fill-column-indicator-mode)
 )
