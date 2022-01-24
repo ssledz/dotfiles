@@ -51,9 +51,10 @@ This function should only modify configuration layer settings."
                lsp-haskell-process-path-hie "haskell-language-server-wrapper"
      )
      lsp
-     ;; markdown
+     html
+     (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
-     ;; org
+     org
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
@@ -71,7 +72,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(direnv)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -562,6 +563,7 @@ before packages are loaded."
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
   ;; iedit mode for smart replacement
   (define-key evil-insert-state-map (kbd "C-;") 'iedit-mode)
+  (use-package direnv :config (direnv-mode))
 
   (global-display-fill-column-indicator-mode)
 )
