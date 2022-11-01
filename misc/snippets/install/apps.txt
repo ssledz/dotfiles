@@ -1,2 +1,0 @@
-sudo snap install rocketchat-desktop
-sudo snap install slack --classic

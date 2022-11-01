@@ -6,10 +6,7 @@ mkdir -p ~/.config
 mkdir -p ~/.config/ranger
 
 stow -R -v -t ~/ git 
-#stow --override=* -R -v -t ~/ -d xdg $profile
-stow -R -v -t ~/ bash common functions tmux vim zsh x
-stow -R -v -t ~/ octave
-stow -R -v -t ~/ misc
+stow -R -v -t ~/ tmux vim zsh x
 stow -R -v -t ~/.config/ranger ranger
 stow -R -v -t ~/.urxvt urxvt
 

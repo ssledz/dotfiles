@@ -1,9 +1,0 @@
-source ~/.mcabber/mcabberrc.inc
-set jid = slawomir.sledz@gmail.com
-# for 2-step verification generate password on https://myaccount.google.com/apppasswords
-set password = xxxxxxxxxxxxx
-set server = talk.google.com
-set ssl = 1
-set tls = 0
-set ssl_ignore_checks = 1
-set port = 5223

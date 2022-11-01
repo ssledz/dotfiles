@@ -1,1 +1,0 @@
-mvn --batch-mode release:update-versions -DautoVersionSubmodules=true -DdevelopmentVersion=1.2.0-SNAPSHOT

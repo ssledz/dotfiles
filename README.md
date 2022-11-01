@@ -1,8 +1,8 @@
 # dotfiles
 
-Install [stow](http://www.gnu.org/software/stow/manual/stow.html)
+Install [stow](https://formulae.brew.sh/formula/stow)
 ```
-sudo apt-get install stow
+brew install stow
 ```
 
 ```

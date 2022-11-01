@@ -1,1 +1,0 @@
-rsync --progress -avhe ssh --exclude 'target' xxx@xxx.xxx.xxx:~/some_dir/* .
