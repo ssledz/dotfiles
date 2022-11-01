@@ -56,7 +56,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rbenv gitignore tmux zsh-autosuggestions jenv)
+plugins=(git gitignore tmux zsh-autosuggestions jenv)
 
 
 # User configuration
@@ -94,14 +94,16 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
-[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 [ -f ~/.ghcup/env ] && source ~/.ghcup/env
+
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && source ~/.nix-profile/etc/profile.d/nix.sh
 
-#export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+[ -f ~/.ghcup/env ] && source ~/.ghcup/env # ghcup-env
 
-eval "$(rbenv init -)"
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 
-[ -f "/Users/u1089269/.ghcup/env" ] && source "/Users/u1089269/.ghcup/env" # ghcup-env
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh

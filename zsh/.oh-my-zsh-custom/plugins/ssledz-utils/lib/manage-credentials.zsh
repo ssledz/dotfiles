@@ -1,1 +1,0 @@
-manage-credentials.bash
