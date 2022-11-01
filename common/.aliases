@@ -1,9 +1,0 @@
-alias vi='vim'
-alias xclip='pbcopy'
-
-#if wrapper exists then mc would have the ability to exit to its current directory
-mc_wrapper=$(locate mc-wrapper.sh | head -1)
-
-if [[ ! -z $mc_wrapper ]]; then
- alias mc=". $mc_wrapper"
-fi
