@@ -178,7 +178,7 @@
     (setq linum-format "%4d \u2502 ")))
 
 (set-face-attribute 'default nil
-                    :font "FiraCode"
+                    :font "Fira Code"
                     :family "Fira Code"
                     :foundry "CTDB"
                     :height 158
@@ -186,7 +186,7 @@
                     :weight 'normal
                     :width 'normal)
 
-(set-frame-font "FiraCode" nil t)
+(set-frame-font "Fira Code" nil t)
 
 (set-face-background hl-line-face "gray13")
 
