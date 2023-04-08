@@ -148,10 +148,10 @@
 ;; multiple cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c")    'mc/edit-lines)
-(global-set-key (kbd "C-c C-c")        'mc/mark-all-dwim)
-(global-set-key (kbd "C-<right>")      'mc/mark-next-like-this-word)
-(global-set-key (kbd "C-<left>")       'mc/mark-previous-like-this-word)
-(global-set-key (kbd "C-c C-<right>")  'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-c m a")        'mc/mark-all-dwim)
+(global-set-key (kbd "C-c m n")      'mc/mark-next-like-this-word)
+(global-set-key (kbd "C-c m p")       'mc/mark-previous-like-this-word)
+(global-set-key (kbd "C-c m s")  'mc/skip-to-next-like-this)
 
 ;; narrow to region
 ;; works great with multi cursors
