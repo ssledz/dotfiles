@@ -97,9 +97,10 @@
 (require 'uniquify)
 
 ;; Ido mode
+(require 'ido)
+(ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
-(ido-mode 1)
 
 ;; Undo tree
 (require 'undo-tree)
@@ -110,8 +111,8 @@
 (drag-stuff-global-mode t)
 (global-set-key [C-up]    'drag-stuff-up   )
 (global-set-key [C-down]  'drag-stuff-down )
-(global-set-key [C-left]  'drag-stuff-left )
-(global-set-key [C-right] 'drag-stuff-right)
+;(global-set-key [C-left]  'drag-stuff-left )
+;(global-set-key [C-right] 'drag-stuff-right)
 
 ;; NumberedWindows: switch windows with Alt-<number>
 (require 'window-number)
@@ -123,28 +124,12 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
-;; Run "make -k" in the current directory
-(setq compilation-read-command nil)
-(defun recompile-quietly ()
-  "Re-compile without changing the window configuration."
-  (interactive)
-  (when (locate-dominating-file default-directory "Makefile")
-    (with-temp-buffer
-      (cd (locate-dominating-file default-directory "Makefile"))
-      (save-window-excursion (recompile)))))
-(global-set-key [(f8)] 'recompile-quietly)
-
 ;; Cycle buffer - use F9/F10 to switch buffers
-(autoload 'cycle-buffer                     "cycle-buffer"
-          "Cycle forward." t)
-(autoload 'cycle-buffer-backward            "cycle-buffer"
-          "Cycle backward." t)
-(autoload 'cycle-buffer-permissive          "cycle-buffer"
-          "Cycle forward allowing *buffers*." t)
-(autoload 'cycle-buffer-backward-permissive "cycle-buffer"
-          "Cycle backward allowing *buffers*." t)
-(autoload 'cycle-buffer-toggle-interesting  "cycle-buffer"
-          "Toggle if this buffer will be considered." t)
+(autoload 'cycle-buffer "cycle-buffer" "Cycle forward." t)
+(autoload 'cycle-buffer-backward "cycle-buffer" "Cycle backward." t)
+(autoload 'cycle-buffer-permissive "cycle-buffer" "Cycle forward allowing *buffers*." t)
+(autoload 'cycle-buffer-backward-permissive "cycle-buffer" "Cycle backward allowing *buffers*." t)
+(autoload 'cycle-buffer-toggle-interesting  "cycle-buffer" "Toggle if this buffer will be considered." t)
 (global-set-key [(f9)]        'cycle-buffer-backward)
 (global-set-key [(f10)]       'cycle-buffer)
 (global-set-key [(shift f9)]  'cycle-buffer-backward-permissive)
@@ -156,9 +141,22 @@
 (global-set-key (kbd "<f7>") 'flyspell-buffer)
 (global-set-key (kbd "C-<f7>") 'ispell-word)
 
+;; expand region
+(require 'expand-region)
+(global-set-key (kbd "C-=")    'er/expand-region)
+
 ;; multiple cursors
 (require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C-S-c C-S-c")    'mc/edit-lines)
+(global-set-key (kbd "C-c C-c")        'mc/mark-all-dwim)
+(global-set-key (kbd "C-<right>")      'mc/mark-next-like-this-word)
+(global-set-key (kbd "C-<left>")       'mc/mark-previous-like-this-word)
+(global-set-key (kbd "C-c C-<right>")  'mc/skip-to-next-like-this)
+
+;; narrow to region
+;; works great with multi cursors
+;; c-x n n - narrow
+;; c-x n w - widen
 
 ;; Git syntax highlighting
 (require 'git-commit)
@@ -195,7 +193,6 @@
 (set-face-background hl-line-face "gray13")
 
 (put 'downcase-region 'disabled nil)
-(put 'company-coq-fold 'disabled nil)
 
 ;; Settings created by Emacs' customize
 
@@ -216,7 +213,7 @@
  '(ispell-dictionary "english")
  '(mark-even-if-inactive t)
  '(package-selected-packages
-   '(multiple-cursors company solarized-theme gnu-elpa-keyring-update xcscope window-number undo-tree merlin haskell-mode drag-stuff company-coq auto-complete))
+   '(expand-region multiple-cursors company solarized-theme gnu-elpa-keyring-update xcscope window-number undo-tree merlin haskell-mode drag-stuff company-coq auto-complete))
  '(scroll-bar-mode 'right)
  '(show-paren-mode t))
 
@@ -227,3 +224,4 @@
  ;; If there is more than one, they won't work right.
  '(default ((((class color) (min-colors 89)) (:foreground "#839496" :background "#002b36")))))
 (put 'upcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
