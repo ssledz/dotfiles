@@ -213,7 +213,7 @@
  '(ispell-dictionary "english")
  '(mark-even-if-inactive t)
  '(package-selected-packages
-   '(expand-region multiple-cursors company solarized-theme gnu-elpa-keyring-update xcscope window-number undo-tree merlin haskell-mode drag-stuff company-coq auto-complete))
+   '(racket-mode expand-region multiple-cursors company solarized-theme gnu-elpa-keyring-update xcscope window-number undo-tree merlin haskell-mode drag-stuff company-coq auto-complete))
  '(scroll-bar-mode 'right)
  '(show-paren-mode t))
 
