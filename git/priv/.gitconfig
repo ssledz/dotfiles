@@ -116,7 +116,8 @@
     autocorrect = 1 #fucking magic!
 [diff]
 	tool = meld
-
+[rerere]
+    enabled = true
 
 
 #Kudos for (copied from):

@@ -6,3 +6,5 @@ for my_lib ($ZSH_CUSTOM/plugins/ssledz-utils/builtin-lib/*); do
 done
 
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+if [ -e /home/ssledz/.nix-profile/etc/profile.d/nix.sh ]; then . /home/ssledz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

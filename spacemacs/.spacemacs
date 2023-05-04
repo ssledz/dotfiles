@@ -32,7 +32,9 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(yaml
+   '(sql
+     javascript
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -44,13 +46,18 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
-     haskell
+     ;ihaskell
      (haskell :variables
                haskell-completion-backend 'lsp
                haskell-process-suggest-remove-import-lines nil
                lsp-haskell-process-path-hie "haskell-language-server-wrapper"
      )
      lsp
+     (lsp :variables
+           lsp-navigation 'simple
+           lsp-lens-enable t
+     )
+
      html
      (markdown :variables markdown-live-preview-engine 'vmd)
      multiple-cursors
@@ -605,7 +612,7 @@ This function is called at the very end of Spacemacs initialization."
  '(org-fontify-done-headline nil)
  '(org-fontify-todo-headline nil)
  '(package-selected-packages
-   '(yaml-mode solarized-theme csv-mode company-lsp nix-mode lsp-haskell monokai-theme lsp-ui helm-company haskell-snippets company-lsp company-cabal))
+   '(sqlup-mode sql-indent tern npm-mode nodejs-repl livid-mode skewer-mode js2-refactor multiple-cursors js2-mode js-doc import-js grizzl helm-gtags ggtags dap-mode bui counsel-gtags counsel swiper ivy add-node-modules-path yaml-mode solarized-theme csv-mode company-lsp nix-mode lsp-haskell monokai-theme lsp-ui helm-company haskell-snippets company-lsp company-cabal))
  '(pdf-view-midnight-colors '("#655370" . "#fbf8ef")))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

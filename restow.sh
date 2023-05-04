@@ -37,7 +37,4 @@ stow -R -v -t ~/acpi acpi
 stow -R -v -t ~/utils utils
 stow -R -v -t ~/.urxvt urxvt
 stow -R -v -t ~/.config i3wm
-
-vim +PluginInstall +qall
-cd ~/.vim/bundle/fzf && ./install --all
-cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer
+stow -R -v -t ~/ emacs

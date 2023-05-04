@@ -1,0 +1,6 @@
+undo-tree
+drag-stuff
+window-number
+haskell-mode
+git-commit
+solarized-theme
