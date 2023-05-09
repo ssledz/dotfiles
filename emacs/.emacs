@@ -46,6 +46,13 @@
 ;; Disable the toolbar
 (tool-bar-mode -1)
 
+;; Insert a new line and jump to it
+(global-set-key (kbd "S-<return>") (kbd "C-e C-m"))
+
+;; Upcase or doncase region
+(global-set-key (kbd "C-c C-u") 'upcase-region)
+(global-set-key (kbd "C-c C-l") 'downcase-region)
+
 ;; Duplicating a line
 (defun duplicate-line()
   (interactive)
@@ -123,6 +130,17 @@
 (window-number-meta-mode)
 
 
+;; Company complete global binding
+(global-set-key (kbd "C-M-SPC") 'company-complete)
+
+;; Show full path name in minibuffer
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
+(global-set-key [C-f1] 'show-file-name)
+
 ;;
 ;; Haskell mode
 ;;
@@ -154,6 +172,13 @@
     (turn-on-purescript-indentation)))
 (setq psc-ide-use-npm-bin t)
 
+(defun show-file-name ()
+  "Show the full path file name in the minibuffer."
+  (interactive)
+  (message (buffer-file-name)))
+
+(global-set-key [C-f1] 'show-file-name) ; Or any other key you want
+
 ;; Cycle buffer - use F9/F10 to switch buffers
 (autoload 'cycle-buffer                     "cycle-buffer" "Cycle forward." t)
 (autoload 'cycle-buffer-backward            "cycle-buffer" "Cycle backward." t)
@@ -177,11 +202,11 @@
 
 ;; multiple cursors
 (require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c")    'mc/edit-lines)
-(global-set-key (kbd "C-c m a")        'mc/mark-all-dwim)
+(global-set-key (kbd "C-S-c C-S-c")  'mc/edit-lines)
+(global-set-key (kbd "C-c m a")      'mc/mark-all-dwim)
 (global-set-key (kbd "C-c m n")      'mc/mark-next-like-this-word)
-(global-set-key (kbd "C-c m p")       'mc/mark-previous-like-this-word)
-(global-set-key (kbd "C-c m s")  'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-c m p")      'mc/mark-previous-like-this-word)
+(global-set-key (kbd "C-c m s")      'mc/skip-to-next-like-this)
 
 ;; narrow to region
 ;; works great with multi cursors
@@ -224,6 +249,7 @@
 
 (put 'downcase-region 'disabled nil)
 (put 'company-coq-fold 'disabled nil)
+(put 'upcase-region 'disabled nil)
 
 ;; Settings created by Emacs' customize
 
@@ -250,3 +276,55 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((((class color) (min-colors 89)) (:foreground "#839496" :background "#002b36")))))
+
+
+;;
+;;
+;;
+;;   | Key            | Function                              |
+;;   |----------------+---------------------------------------|
+;;   | C-c C-s        | psc-ide-server-start                  |
+;;   | C-c C-q        | psc-ide-server-quit                   |
+;;   | C-c C-t        | psc-ide-show-type                     |
+;;   | C-c C-i        | psc-ide-add-import                    |
+;;   | C-c C-a        | psc-ide-add-clause                    |
+;;   | C-c C-c        | psc-ide-case-split                    |
+;;   | C-c C-l        | psc-ide-load-all                      |
+;;   | C-c C-b        | psc-ide-rebuild                       |
+;;   | C-c C-S-l      | psc-ide-load-module                   |
+;;   | C-c M-s        | psc-ide-flycheck-insert-suggestion    |
+;;   |                |                                       |
+;;   | C-up           | drag-stuff-up                         |
+;;   | C-down         | drag-stuff-down                       |
+;;   |                |                                       |
+;;   | C-S-c C-S-c    | mc/edit-lines                         |
+;;   | C-c m a        | mc/mark-all-dwim                      |
+;;   | C-c m n        | mc/mark-next-like-this-word           |
+;;   | C-c m p        | mc/mark-previous-like-this-word       |
+;;   | C-c m s        | mc/skip-to-next-like-this             |
+;;   |                |                                       |
+;;   | C-=            | er/expand-region                      |
+;;   |                |                                       |
+;;   | c-x n n        | narrow to region                      |
+;;   | c-x n w        | widen region                          |
+;;   |                |                                       |
+;;   | <f8>           | haskell-navigate-imports              |
+;;   |                |                                       |
+;;   | <f11>          | global-linum-mode                     |
+;;   | C-c C-d        | duplicate-line                        |
+;;   | S-<return      | jump next line                        |
+;;   | C-c C-u        | upcase-region                         |
+;;   | C-c C-l        | downcase-region                       |
+;;   | M-;            | comment-or-uncomment-region-or-line   |
+;;   | C-M-SPC        | company-complete                      |
+;;   | [C-f1]         | show-file-name                        |
+;;   |                |                                       |
+;;   | [(f9)]         | cycle-buffer-backward                 |
+;;   | [(f10)]        | cycle-buffer                          |
+;;   | [(shift f9)]   | cycle-buffer-backward-permissive      |
+;;   | [(shift f10)]  | cycle-buffer-permissive               |
+;;   |                |                                       |
+;;   |                |                                       |
+;;   |                |                                       |
+
+

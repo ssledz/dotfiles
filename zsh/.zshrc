@@ -57,7 +57,7 @@ ZSH_TMUX_AUTOCONNECT=false
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git rbenv gitignore tmux ssledz-utils zsh-autosuggestions jenv)
-plugins=(git rbenv gitignore tmux zsh-autosuggestions jenv)
+plugins=(git rbenv gitignore tmux zsh-autosuggestions jenv kubectl)
 
 
 # User configuration
