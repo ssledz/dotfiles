@@ -129,6 +129,11 @@
 (window-number-mode)
 (window-number-meta-mode)
 
+;; Shrinking / enlarge windows
+(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-C-<down>") 'shrink-window)
+(global-set-key (kbd "S-C-<up>") 'enlarge-window)
 
 ;; Company complete global binding
 (global-set-key (kbd "C-M-SPC") 'company-complete)
@@ -145,11 +150,45 @@
 ;; Haskell mode
 ;;
 (require 'haskell-mode)
+(require 'haskell-interactive-mode)
+(require 'haskell-process)
+
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+(add-hook 'haskell-mode-hook 'flycheck-mode)
+(add-hook 'haskell-mode-hook 'flyspell-prog-mode)
+(add-hook 'haskell-mode-hook
+          (lambda ()
+            (set (make-local-variable 'company-backends)
+                 (append '((company-capf company-dabbrev-code))
+                         company-backends))))
+(add-hook 'haskell-mode-hook 'company-mode)
+(add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
 ;; key bindings
 (define-key haskell-mode-map (kbd "<f8>") 'haskell-navigate-imports)
+(define-key haskell-mode-map (kbd "M-.") 'haskell-mode-jump-to-def-or-tag)
+(define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
+(define-key haskell-mode-map (kbd "C-`") 'haskell-interactive-bring)
+(define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
+(define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
+(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
+(define-key haskell-mode-map (kbd "C-c C-k") 'haskell-interactive-mode-clear)
+(define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
+
+;; interactive repl to separate frame
+(defun create-unfocused-frame ()
+  (let*
+    ((prv (window-frame))
+     (created (make-frame)))
+    (select-frame-set-input-focus prv) created))
+
+(defun haskell-create-interactive-frame ()
+  (interactive)
+  (haskell-interactive-bring)
+  (create-unfocused-frame)
+  (delete-window))
 
 ;; add ~/.cabal/bin path to a exec path
 (let ((my-cabal-path (expand-file-name "~/.cabal/bin")))
@@ -157,8 +196,12 @@
   (add-to-list 'exec-path my-cabal-path))
 
 ;; call hasktags on file save
-(custom-set-variables '(haskell-tags-on-save t))
+;;(custom-set-variables '(haskell-tags-on-save t))
 
+(custom-set-variables
+  '(haskell-process-suggest-remove-import-lines t)
+  '(haskell-process-auto-import-loaded-modules t)
+  '(haskell-process-log t))
 
 ;;
 ;; Purescript mode
@@ -250,6 +293,8 @@
 (put 'downcase-region 'disabled nil)
 (put 'company-coq-fold 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(put 'narrow-to-region 'disabled nil)
+
 
 ;; Settings created by Emacs' customize
 
@@ -266,7 +311,7 @@
  '(ispell-dictionary "british")
  '(mark-even-if-inactive t)
  '(package-selected-packages
-   '(purescript-mode psc-ide solarized-theme gnu-elpa-keyring-update xcscope window-number undo-tree merlin haskell-mode drag-stuff company-coq auto-complete))
+   '(magit purescript-mode psc-ide solarized-theme gnu-elpa-keyring-update xcscope window-number undo-tree merlin haskell-mode drag-stuff company-coq auto-complete))
  '(scroll-bar-mode 'right)
  '(show-paren-mode t))
 
@@ -324,7 +369,7 @@
 ;;   | [(shift f9)]   | cycle-buffer-backward-permissive      |
 ;;   | [(shift f10)]  | cycle-buffer-permissive               |
 ;;   |                |                                       |
-;;   |                |                                       |
+;;   | C-x g          | magit                                 |
 ;;   |                |                                       |
 
 
