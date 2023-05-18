@@ -130,10 +130,10 @@
 (window-number-meta-mode)
 
 ;; Shrinking / enlarge windows
-(global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
-(global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
-(global-set-key (kbd "S-C-<down>") 'shrink-window)
-(global-set-key (kbd "S-C-<up>") 'enlarge-window)
+(global-set-key (kbd "M-s-<left>")  'shrink-window-horizontally)
+(global-set-key (kbd "M-s-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-s-<down>")  'shrink-window)
+(global-set-key (kbd "M-s-<up>")    'enlarge-window)
 
 ;; Company complete global binding
 (global-set-key (kbd "C-M-SPC") 'company-complete)
