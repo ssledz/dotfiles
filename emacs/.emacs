@@ -136,7 +136,7 @@
 (global-set-key (kbd "M-s-<up>")    'enlarge-window)
 
 ;; Company complete global binding
-(global-set-key (kbd "C-M-SPC") 'company-complete)
+(global-set-key (kbd "M-RET") 'company-complete)
 
 ;; Show full path name in minibuffer
 (defun show-file-name ()
@@ -145,6 +145,32 @@
   (message (buffer-file-name)))
 
 (global-set-key [C-f1] 'show-file-name)
+
+
+;;
+;; Multi Occur
+;;
+;; https://www.masteringemacs.org/article/searching-buffers-occur-mode
+;;
+(defun get-buffers-matching-mode (mode)
+  "Returns a list of buffers where their major-mode is equal to MODE"
+  (let ((buffer-mode-matches '()))
+    (dolist (buf (buffer-list))
+      (with-current-buffer buf
+        (when (eq mode major-mode)
+          (push buf buffer-mode-matches))))
+    buffer-mode-matches))
+
+(defun multi-occur-in-this-mode ()
+  "Show all lines matching REGEXP in buffers with this major mode."
+  (interactive)
+  (multi-occur
+   (get-buffers-matching-mode major-mode)
+   (car (occur-read-primary-args))))
+
+;; global key for `multi-occur-in-this-mode' - you should change this.
+(global-set-key (kbd "C-<f2>") 'multi-occur-in-this-mode)
+
 
 ;;
 ;; Haskell mode
@@ -156,7 +182,6 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 (add-hook 'haskell-mode-hook 'flycheck-mode)
-(add-hook 'haskell-mode-hook 'flyspell-prog-mode)
 (add-hook 'haskell-mode-hook
           (lambda ()
             (set (make-local-variable 'company-backends)
@@ -208,12 +233,21 @@
 ;;
 (require 'psc-ide)
 (add-hook 'purescript-mode-hook
-  (lambda ()
-    (psc-ide-mode)
-    (company-mode)
-    (flycheck-mode)
-    (turn-on-purescript-indentation)))
+          (lambda ()
+            (psc-ide-mode)
+            (psc-set-company-backends)
+            (company-mode)
+            (flycheck-mode)
+            (turn-on-purescript-indentation)))
 (setq psc-ide-use-npm-bin t)
+
+(defun psc-set-company-backends ()
+  (set (make-local-variable 'company-backends)
+       (append '((company-psc-ide-backend
+                  company-dabbrev-code
+                  company-etags))
+               company-backends)))
+
 
 (defun show-file-name ()
   "Show the full path file name in the minibuffer."
@@ -361,7 +395,7 @@
 ;;   | C-c C-u        | upcase-region                         |
 ;;   | C-c C-l        | downcase-region                       |
 ;;   | M-;            | comment-or-uncomment-region-or-line   |
-;;   | C-M-SPC        | company-complete                      |
+;;   | C-RET          | company-complete                      |
 ;;   | [C-f1]         | show-file-name                        |
 ;;   |                |                                       |
 ;;   | [(f9)]         | cycle-buffer-backward                 |
@@ -371,5 +405,9 @@
 ;;   |                |                                       |
 ;;   | C-x g          | magit                                 |
 ;;   |                |                                       |
-
+;;   | M-g g          | goto-line                             |
+;;   | M-s o          | occur                                 |
+;;   | M-g M-n        | occur next                            |
+;;   | M-g M-p        | occur prev                            |
+;;   | C-f2           | multi occur                           |
 
