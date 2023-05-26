@@ -6,6 +6,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 
 PROMPT='${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)$(jenv_prompt_info)'
-RPROMPT='[%F{yellow}$(date +"%H:%M:%S")%f]'
+
+# disable rprompt
+#RPROMPT='[%F{yellow}$(date +"%H:%M:%S")%f]'
 
 

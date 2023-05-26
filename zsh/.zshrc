@@ -5,9 +5,10 @@
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ssledz"
-#ZSH_THEME="agnoster"
+#ZSH_THEME="ssledz"
+ZSH_THEME=simple
 #ZSH_THEME="solarized-powerline"
+#ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +46,7 @@ ZSH_THEME="ssledz"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=~/.oh-my-zsh-custom
+#ZSH_CUSTOM=~/.oh-my-zsh-custom
 
 [[ -z $ZSH_TMUX_AUTOSTART ]] && ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
