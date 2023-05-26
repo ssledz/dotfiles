@@ -28,8 +28,9 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Highlight trailing whitespaces
-(setq-default show-trailing-whitespace t)
-(setq-default indicate-empty-lines t)
+(defun set-show-trailing-whitespce ()
+  (setq show-trailing-whitespace t)
+  (setq indicate-empty-lines t))
 
 ;; Set paragraph fill width
 (setq-default fill-column 80)
@@ -169,7 +170,7 @@
    (car (occur-read-primary-args))))
 
 ;; global key for `multi-occur-in-this-mode' - you should change this.
-(global-set-key (kbd "C-<f2>") 'multi-occur-in-this-mode)
+(global-set-key (kbd "C-o") 'multi-occur-in-this-mode)
 
 
 ;;
@@ -190,6 +191,7 @@
 (add-hook 'haskell-mode-hook 'company-mode)
 (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook 'set-show-trailing-whitespce)
 
 ;; key bindings
 (define-key haskell-mode-map (kbd "<f8>") 'haskell-navigate-imports)
@@ -238,6 +240,7 @@
             (psc-set-company-backends)
             (company-mode)
             (flycheck-mode)
+            (set-show-trailing-whitespce)
             (turn-on-purescript-indentation)))
 (setq psc-ide-use-npm-bin t)
 
@@ -409,5 +412,5 @@
 ;;   | M-s o          | occur                                 |
 ;;   | M-g M-n        | occur next                            |
 ;;   | M-g M-p        | occur prev                            |
-;;   | C-f2           | multi occur                           |
+;;   | C-o            | multi occur                           |
 
