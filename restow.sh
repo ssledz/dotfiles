@@ -1,17 +1,5 @@
 #!/bin/bash
 
-conf_file=~/.dotfiles
-default_profile=priv
-
-
-profile() {
-  local profile
-  if [ -e $conf_file ]; then
-    profile=$(cat $conf_file | grep -v '^#' | grep '^profile=' | cut -d '=' -f 2)
-  fi
-  [[ -z $profile ]] && echo $default_profile || echo $profile
-}
-
 mkdir -p ~/acpi
 mkdir -p ~/utils
 mkdir -p ~/.tmux/plugins
@@ -21,12 +9,7 @@ mkdir -p ~/.config/ranger
 mkdir -p ~/.config/awesome
 mkdir -p ~/.mcabber
 
-profile=$(profile)
-
-echo "Active profile : $profile"
-
-stow --override=* -R -v -t ~/ -d git $profile
-stow --override=* -R -v -t ~/ -d xdg $profile
+stow -R -v -t ~/ git
 stow -R -v -t ~/ bash common functions tmux vim zsh x spacemacs
 stow -R -v -t ~/.config/awesome awesome
 stow -R -v -t ~/.mcabber mcabber
