@@ -43,6 +43,11 @@
 ;; Disable scrollbar
 (scroll-bar-mode -1)
 
+(setq-default vertical-scroll-bar nil)
+
+;; Show window divider
+(window-divider-mode)
+
 ;; Disable the toolbar
 (tool-bar-mode -1)
 
