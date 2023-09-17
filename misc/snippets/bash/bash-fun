@@ -1,1 +1,0 @@
-. <(test -e fun.sh || curl -Ls https://raw.githubusercontent.com/ssledz/bash-fun/master/src/fun.sh > fun.sh; cat fun.sh)

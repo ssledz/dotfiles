@@ -1,7 +1,0 @@
-if [[ $1 -eq 0 ]]; then
-  echo "Arg 0"
-elif [[ $2 == "1" ]]; then
-  echo "Arg 1"
-else
-  echo "?"
-fi
