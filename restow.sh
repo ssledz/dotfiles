@@ -9,4 +9,3 @@ stow -R -v -t ~/ git
 stow -R -v -t ~/ emacs
 stow -R -v -t ~/ tmux vim zsh
 stow -R -v -t ~/.config/ranger ranger
-stow -R -v -t ~/.urxvt urxvt
