@@ -22,7 +22,7 @@ Plugin 'vimwiki/vimwiki'
 " Full path fuzzy file, buffer, mru, tag, ... finder for Vim
 " Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
