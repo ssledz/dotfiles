@@ -6,7 +6,6 @@ alias gcob='git checkout -b '
 alias ga='git add '
 alias gc='git commit'
 alias gg='git grep ' #  A great very FAST search option, easier then `find`
-alias gi='cat ~/.git/cheat-sheet.txt'
 
 alias ls='ls -G'
 alias grep='grep --color=auto'

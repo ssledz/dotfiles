@@ -104,6 +104,7 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 
+[ -f ~/.ghcup/env ] && source ~/.ghcup/env # ghcup-env
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -117,5 +118,3 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.jenv/bin:$PATH"
 [ -f ~/.jenv/bin/jenv ] && eval "$(jenv init -)"
 
-
-[ -f "/Users/slawomir.sledz/.ghcup/env" ] && . "/Users/slawomir.sledz/.ghcup/env" # ghcup-env
