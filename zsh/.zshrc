@@ -1,3 +1,7 @@
+fpath+=~/.zfunc
+autoload -U compinit
+compinit
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 

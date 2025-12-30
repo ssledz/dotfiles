@@ -8,3 +8,5 @@ export PATH="$HOME/bin/homebrew/bin:$HOME/bin:$HOME/.emacs.d/bin:$HOME/.aiken/bi
 export K9SCONFIG="$HOME/.config/k9s"
 
 export XDG_CONFIG_HOME="$HOME/.config"
+
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
