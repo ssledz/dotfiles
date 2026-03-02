@@ -110,11 +110,6 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -125,3 +120,10 @@ export PATH="$HOME/.jenv/bin:$PATH"
 
 
 [ -f "/Users/slawomir.sledz/.ghcup/env" ] && . "/Users/slawomir.sledz/.ghcup/env" # ghcup-env
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#export SDKMAN_DIR="$HOME/.sdkman"
+#[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
+
+
