@@ -72,6 +72,8 @@ setopt NO_NOMATCH
 
 autoload zmv
 
+[[ -f ~/.zprofile ]] && source ~/.zprofile
+
 if [ -f ~/.env_variables ]; then
     source ~/.env_variables
 fi

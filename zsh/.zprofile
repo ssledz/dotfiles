@@ -11,3 +11,6 @@ export VISUAL=view
 export PAGER=less
 
 export LANG=pl_PL.UTF-8
+
+# Added by Obsidian
+export PATH="$PATH:/Users/slawomir.sledz/bin/Obsidian.app/Contents/MacOS"
