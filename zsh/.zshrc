@@ -12,6 +12,9 @@ export ZSH=~/.oh-my-zsh
 #ZSH_THEME="ssledz"
 #ZSH_THEME="agnoster"
 ZSH_THEME="solarized-powerline"
+ZSH_POWERLINE_SHOW_TIME=false
+ZSH_POWERLINE_SHOW_IP=false
+ZSH_POWERLINE_SHOW_USER=false
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
