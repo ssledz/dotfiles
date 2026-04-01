@@ -1,6 +1,6 @@
 # Set PATH, MANPATH, etc., for Homebrew.
 #eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(/usr/local/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
 
 export MC_SKIN=~/.mc/config/skin/solarized.ini
 

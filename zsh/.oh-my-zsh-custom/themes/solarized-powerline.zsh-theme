@@ -1,1 +1,1 @@
-oh-my-zsh-solarized-powerline-theme/solarized-powerline.zsh-theme
+solarized-powerline/solarized-powerline.zsh-theme
