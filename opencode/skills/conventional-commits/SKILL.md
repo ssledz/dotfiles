@@ -1,6 +1,6 @@
 ---
 name: conventional-commits
-description: Enforces Conventional Commits specification for git commit messages. Use when preparing, creating, or validating commits, commit messages, or when the user mentions commit, git commit, or commit message.
+description: Enforces Conventional Commits specification for git commit messages. Use when preparing, creating, or validating commits, commit messages, or when the user mentions commit, git commit, or commit changes.
 metadata:
   version: "1.0"
   author: ssledz
