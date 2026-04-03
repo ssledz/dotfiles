@@ -10,12 +10,20 @@
             "models": {
                 "google/gemma-3n-e4b": {
                     "name": "Gemma 3n-e4b (local)"
+                },
+                "qwen3-coder-30b-a3b-instruct-mlx": {
+                    "name": "Qwen3-Coder 30b-a3b-mlx"
+                },
+                "qwen2.5-coder-7b-instruct-mlx": {
+                    "name": "Qwen2.5-Coder 7b-mlx"
                 }
+
+
             }
         }
     },
-    "model": "lmstudio/google/gemma-3n-e4b",
-    "small_model": "lmstudio/google/gemma-3n-e4b",
+    "model": "lmstudio/qwen3-coder-30b-a3b-instruct-mlx",
+    "small_model": "lmstudio/qwen2.5-coder-7b-instruct-mlx",
     "username": "ssledz",
     "autoupdate": true,
     "permission": {
