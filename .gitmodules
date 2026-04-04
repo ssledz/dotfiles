@@ -19,3 +19,4 @@
 [submodule "zsh/.oh-my-zsh-custom/themes/oh-my-zsh-solarized-powerline-theme"]
 	path = zsh/.oh-my-zsh-custom/themes/oh-my-zsh-solarized-powerline-theme
 	url = https://github.com/ssledz/oh-my-zsh-solarized-powerline-theme.git
+	branch = main
