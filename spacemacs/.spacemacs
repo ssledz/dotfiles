@@ -37,10 +37,10 @@ This function should only modify configuration layer settings."
      ;;                 javascript-fmt-tool 'prettier
      ;;                 javascript-fmt-on-save t)
      ;;     prettier
-     ;;     (json :variables
-     ;;           json-fmt-tool 'prettier
-     ;;           json-backend 'lsp
-     ;;           json-fmt-on-save t)
+     (json :variables
+           json-fmt-tool 'prettier
+           ;;           json-backend 'lsp
+           json-fmt-on-save t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -787,20 +787,21 @@ This function is called at the very end of Spacemacs initialization."
                 highlight-parentheses hindent hl-todo hlint-refactor holy-mode
                 htmlize hungry-delete hybrid-mode impatient-mode import-js
                 indent-guide info+ inheritenv inspector js-doc js2-mode
-                js2-refactor link-hint live-py-mode livid-mode llm load-env-vars
-                lorem-ipsum lsp-docker lsp-haskell lsp-mode lsp-origami
-                lsp-treemacs lsp-ui macrostep markdown-toc monokai-theme
-                multi-line multi-term multi-vterm multiple-cursors mwim nameless
-                nix-mode nixos-options nodejs-repl npm-mode open-junk-file
-                org-cliplink org-contrib org-download org-mime org-pomodoro
-                org-present org-projectile org-rich-yank org-superstar orgit-forge
-                origami overseer package-lint page-break-lines paradox
-                password-generator pcre2el pip-requirements pipenv pippel plz
-                plz-event-source plz-media-type poetry popwin pos-tip prettier-js
-                psc-ide psci pug-mode purescript-mode py-isort pydoc pyenv-mode
-                pylookup python-pytest pythonic pyvenv quickrun rainbow-delimiters
-                restart-emacs sass-mode scss-mode shell-pop simple-httpd
-                skewer-mode slim-mode smeargle solarized-theme space-doc spaceline
+                js2-refactor json-mode json-navigator json-reformat json-snatcher
+                link-hint live-py-mode livid-mode llm load-env-vars lorem-ipsum
+                lsp-docker lsp-haskell lsp-mode lsp-origami lsp-treemacs lsp-ui
+                macrostep markdown-toc monokai-theme multi-line multi-term
+                multi-vterm multiple-cursors mwim nameless nix-mode nixos-options
+                nodejs-repl npm-mode open-junk-file org-cliplink org-contrib
+                org-download org-mime org-pomodoro org-present org-projectile
+                org-rich-yank org-superstar orgit-forge origami overseer
+                package-lint page-break-lines paradox password-generator pcre2el
+                pip-requirements pipenv pippel plz plz-event-source plz-media-type
+                poetry popwin pos-tip prettier-js psc-ide psci pug-mode
+                purescript-mode py-isort pydoc pyenv-mode pylookup python-pytest
+                pythonic pyvenv quickrun rainbow-delimiters restart-emacs
+                sass-mode scss-mode shell-pop simple-httpd skewer-mode slim-mode
+                smeargle solarized-theme space-doc spaceline
                 spacemacs-purpose-popwin spacemacs-whitespace-cleanup sphinx-doc
                 string-edit-at-point string-inflection symbol-overlay symon
                 tagedit term-cursor terminal-here tern toc-org toml-mode
