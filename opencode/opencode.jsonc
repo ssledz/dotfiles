@@ -45,6 +45,29 @@
                     "addNpmPath": true
                 }
             }
+        },
+        "metals": {
+            "command": [
+                "/Users/ssledz/bin/metals"
+            ],
+            "extensions": [
+                ".scala",
+                ".sbt",
+                ".sc"
+            ],
+            "env": {
+                "JAVA_HOME": "/Users/ssledz/.sdkman/candidates/java/current"
+            },
+            "initialization": {
+                "compilerOptions": {
+                    "isCompletionItemDetailEnabled": true,
+                    "isCompletionItemDocumentationEnabled": true,
+                    "isHoverDocumentationEnabled": true,
+                    "isSignatureHelpDocumentationEnabled": true
+                },
+                "doctorProvider": "json",
+                "statusBarProvider": "log-message"
+            }
         }
     },
     "mcp": {
