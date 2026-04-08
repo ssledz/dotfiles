@@ -14,3 +14,7 @@ export LANG=pl_PL.UTF-8
 
 # Added by Obsidian
 export PATH="$PATH:/Users/slawomir.sledz/bin/Obsidian.app/Contents/MacOS"
+
+# >>> coursier install directory >>>
+export PATH="$PATH:/Users/ssledz/Library/Application Support/Coursier/bin"
+# <<< coursier install directory <<<

@@ -30,9 +30,10 @@
         "lsp": "allow"
     },
     "plugin": [
-        "@franlol/opencode-md-table-formatter@latest",
-        "opencode-devcontainers"
-    ],
+    "@franlol/opencode-md-table-formatter@latest",
+    "opencode-devcontainers",
+    "oh-my-openagent@latest"
+  ],
     "lsp": {
         "purescript": {
             "command": ["npx", "purescript-language-server", "--stdio"],
