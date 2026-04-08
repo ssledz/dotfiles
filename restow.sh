@@ -10,3 +10,4 @@ stow -R -v -t ~/ git
 stow -R -v -t ~/ tmux vim zsh
 stow -R -v -t ~/.config/ranger ranger
 stow -R -v -t ~/.config/opencode opencode
+stow -R -v -t ~/ spacemacs
