@@ -1,0 +1,54 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "model": "github-copilot/claude-opus-4.6",
+    "small_model": "github-copilot/gpt-4o-mini",
+    "autoupdate": true,
+    "share": "manual",
+    "compaction": {
+        "auto": true,
+        "prune": true,
+        "reserved": 10000
+    },
+    "instructions": [],
+    "plugin": [
+        "@franlol/opencode-md-table-formatter@latest",
+        "opencode-devcontainers",
+        "oh-my-openagent@latest"
+    ],
+    "lsp": {
+        "purescript": {
+            "command": ["npx", "purescript-language-server", "--stdio"],
+            "extensions": [".purs"],
+            "initialization": {
+                "purescript": {
+                    "formatter": "purs-tidy",
+                    "addPscPackageSources": true,
+                    "addNpmPath": true
+                }
+            }
+        },
+        "metals": {
+            "command": [
+                "/Users/slawomir.sledz/bin/metals"
+            ],
+            "extensions": [
+                ".scala",
+                ".sbt",
+                ".sc"
+            ],
+            "env": {
+                "JAVA_HOME": "/Users/slawomir.sledz/.jenv/versions/17"
+            },
+            "initialization": {
+                "compilerOptions": {
+                    "isCompletionItemDetailEnabled": true,
+                    "isCompletionItemDocumentationEnabled": true,
+                    "isHoverDocumentationEnabled": true,
+                    "isSignatureHelpDocumentationEnabled": true
+                },
+                "doctorProvider": "json",
+                "statusBarProvider": "log-message"
+            }
+        }
+    }
+}
