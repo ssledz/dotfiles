@@ -193,4 +193,8 @@ Before install nodejs & bun
 brew install anomalyco/tap/opencode
 ```
 
+## Install obsidian
 
+```bash
+brew install --cask obsidian --appdir=/Users/slawomir.sledz/bin
+```
