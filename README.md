@@ -80,3 +80,111 @@ brew install font-fira-code
 brew install cmake python go nodejs
 ./vim-init.sh
 ```
+
+## Install kubernetes tools (kubectl)
+
+* https://kubernetes.io/docs/tasks/tools/
+
+```bash
+brew install kubectl
+```
+
+## Install k9s
+
+* https://k9scli.io/topics/install/
+
+```bash
+brew install derailed/k9s/k9s
+```
+
+## Install jdk & scala
+
+Install [jenv](https://github.com/jenv/jenv)
+
+```bash
+brew install jenv
+```
+
+Install [sdkman](https://sdkman.io/)
+
+`SDKMAN` requires Bash 4 or higher
+
+```bash
+brew install bash
+```
+
+```bash
+curl -s "https://get.sdkman.io" | bash
+```
+
+Install jdk
+
+```
+sdk install java 17.0.18-tem
+sdk install java 21.0.10-tem
+jenv add /Users/slawomir.sledz/.sdkman/candidates/java/17.0.18-tem
+jenv add /Users/slawomir.sledz/.sdkman/candidates/java/21.0.10-tem
+jenv global 21
+jenv rehash
+```
+
+Install scala
+
+```bash
+sdk install scala 2.13.18
+sdk install sbt 1.12.9
+brew install coursier/formulas/coursier
+sdk install scalacli
+scala-cli install-completions
+cs install scalafmt
+```
+
+Install metals
+
+* [Installation instruction](https://gist.github.com/ssledz/276085b2f1f29868d4e423136ed94de3)
+
+```bash
+cd ~/bin
+
+coursier bootstrap \
+  --java-opt -XX:+UseG1GC \
+  --java-opt -XX:+UseStringDeduplication \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  org.scalameta:metals_2.13:1.6.6 -o metals -f
+
+chmod +x metals
+```
+
+## Install nodejs
+
+Install [nvm](https://github.com/nvm-sh/nvm)
+
+```bash
+mkdir ~/.nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+```
+
+Install nodejs
+
+```bash
+nvm install 24
+nvm use 24
+```
+
+Install [bun](https://bun.com/get)
+
+```bash
+npm install -g bun
+```
+
+
+## Install opencode
+
+Before install nodejs & bun
+
+```bash
+brew install anomalyco/tap/opencode
+```
+
+

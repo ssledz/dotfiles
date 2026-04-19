@@ -127,7 +127,12 @@ export PATH="$HOME/.jenv/bin:$PATH"
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="$HOME/.sdkman"
-#[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
+export SDKMAN_DIR="$HOME/.sdkman"
+[ -f ~/.sdkman/bin/sdkman-init.sh ] && source ~/.sdkman/bin/sdkman-init.sh
 
 
+
+# >>> scala-cli completions >>>
+fpath=("/Users/slawomir.sledz/Library/Application Support/ScalaCli/completions/zsh" $fpath)
+compinit
+# <<< scala-cli completions <<<
