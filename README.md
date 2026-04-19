@@ -198,3 +198,9 @@ brew install anomalyco/tap/opencode
 ```bash
 brew install --cask obsidian --appdir=/Users/slawomir.sledz/bin
 ```
+
+## Install azure-cli (az)
+
+```bash
+brew update && brew install azure-cli
+```

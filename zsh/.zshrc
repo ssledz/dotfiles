@@ -136,3 +136,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 fpath=("/Users/slawomir.sledz/Library/Application Support/ScalaCli/completions/zsh" $fpath)
 compinit
 # <<< scala-cli completions <<<
+
+# az autocompletion
+if [ -e "$(brew --prefix)/etc/bash_completion.d/az" ]; then
+    autoload bashcompinit && bashcompinit
+    source $(brew --prefix)/etc/bash_completion.d/az
+fi
+
+
