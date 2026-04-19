@@ -156,6 +156,12 @@ coursier bootstrap \
 chmod +x metals
 ```
 
+Install jetbrains toolbox
+
+```bash
+brew install --cask jetbrains-toolbox --appdir=/Users/slawomir.sledz/bin
+```
+
 ## Install nodejs
 
 Install [nvm](https://github.com/nvm-sh/nvm)
