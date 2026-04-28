@@ -16,6 +16,3 @@
 [submodule "zsh/.oh-my-zsh-custom/plugins/jenv"]
 	path = zsh/.oh-my-zsh-custom/plugins/jenv
 	url = https://github.com/ssledz/zsh-jenv
-[submodule "zsh/.oh-my-zsh-custom/themes/oh-my-zsh-solarized-powerline-theme"]
-	path = zsh/.oh-my-zsh-custom/themes/oh-my-zsh-solarized-powerline-theme
-	url = https://github.com/bbhands/oh-my-zsh-solarized-powerline-theme
