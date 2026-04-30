@@ -3,7 +3,7 @@
   "agents": {
     "sisyphus": {
       "model": "github-copilot/claude-opus-4.6",
-      "variant": "max"
+      "variant": "high"
     },
     "hephaestus": {
       "model": "github-copilot/gpt-5.4",
@@ -21,15 +21,15 @@
     },
     "prometheus": {
       "model": "github-copilot/claude-opus-4.6",
-      "variant": "max"
+      "variant": "high"
     },
     "metis": {
       "model": "github-copilot/claude-opus-4.6",
-      "variant": "max"
+      "variant": "high"
     },
     "momus": {
       "model": "github-copilot/gpt-5.4",
-      "variant": "xhigh"
+      "variant": "high"
     },
     "atlas": {
       "model": "github-copilot/claude-sonnet-4.6"
