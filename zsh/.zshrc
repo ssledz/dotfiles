@@ -120,7 +120,10 @@ export NVM_DIR="$HOME/.nvm"
 
 
 export PATH="$HOME/.jenv/bin:$PATH"
-[ -f ~/.jenv/bin/jenv ] && eval "$(jenv init -)"
+
+if [ -f /opt/homebrew/bin/jenv ] || [ -f ~/.jenv/bin/jenv  ]; then
+    eval "$(jenv init -)"
+fi
 
 
 [ -f "/Users/slawomir.sledz/.ghcup/env" ] && . "/Users/slawomir.sledz/.ghcup/env" # ghcup-env
