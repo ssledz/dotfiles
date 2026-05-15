@@ -119,9 +119,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-export PATH="$HOME/.jenv/bin:$PATH"
-
-if [ -f /opt/homebrew/bin/jenv ] || [ -f ~/.jenv/bin/jenv  ]; then
+if [ -f /opt/homebrew/opt/jenv/bin/jenv ]; then
+    export JENV_ROOT="/opt/homebrew/opt/jenv"
+    export PATH="$JENV_ROOT/bin:$PATH"
+    eval "$(jenv init -)"
+elif [ -f ~/.jenv/bin/jenv  ]; then
+    export PATH="$HOME/.jenv/bin:$PATH"
     eval "$(jenv init -)"
 fi
 
