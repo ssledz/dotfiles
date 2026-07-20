@@ -41,6 +41,7 @@ This function should only modify configuration layer settings."
            json-fmt-tool 'prettier
            ;;           json-backend 'lsp
            json-fmt-on-save t)
+     yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -809,7 +810,7 @@ This function is called at the very end of Spacemacs initialization."
                 treemacs-projectile typescript-mode undo-fu-session unfill
                 vi-tilde-fringe vmd-mode volatile-highlights vterm vundo
                 web-beautify web-completion-data web-mode wgrep winum
-                writeroom-mode ws-butler yasnippet-snippets)))
+                writeroom-mode ws-butler yaml-mode yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

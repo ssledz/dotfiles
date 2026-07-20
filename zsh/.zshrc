@@ -129,7 +129,9 @@ elif [ -f ~/.jenv/bin/jenv  ]; then
 fi
 
 
-[ -f "/Users/slawomir.sledz/.ghcup/env" ] && . "/Users/slawomir.sledz/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "/Users/slawomir.sledz/.ghcup/env" # ghcup-env
+
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
