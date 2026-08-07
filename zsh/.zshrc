@@ -145,3 +145,6 @@ export PATH="/Users/ssledz/.rd/bin:$PATH"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/ssledz/.lmstudio/bin"
 # End of LM Studio CLI section
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.1
