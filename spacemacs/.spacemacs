@@ -38,8 +38,8 @@ This function should only modify configuration layer settings."
      ;;                 javascript-fmt-on-save t)
      ;;     prettier
      (json :variables
-           json-fmt-tool 'prettier
-           ;;           json-backend 'lsp
+           json-fmt-tool 'json-reformat
+           js-indent-level 2
            json-fmt-on-save t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
