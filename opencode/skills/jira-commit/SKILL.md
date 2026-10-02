@@ -3,14 +3,24 @@ name: jira-commit
 description: >
   Create git commits with a single-line summary prefixed by the Jira ticket id, e.g.
   "[NASTC-3965] Return info that app is not registered". Ticket id is taken from the current
-  branch name (or asked from the user). Summary is generated from the diff against `develop`
-  (or a baseline the user names explicitly). No commit body. Use when the user says "commit",
-  "create a commit", "commit my changes", "jira commit", or invokes /jira-commit.
+  branch name (or asked from the user). Summary is generated from the changes in the current
+  worktree (staged, unstaged, untracked). Stages and commits automatically without asking.
+  Can also only generate the message without committing. No commit body. Use when the user
+  says "commit", "create a commit", "commit my changes", "jira commit", "commit message",
+  "generate commit message", or invokes /jira-commit.
   Takes precedence over caveman-commit / Conventional Commits for commit creation.
 ---
 
 Create a commit whose message is ONE line: `[<TICKET>] <Summary>`. No body, no trailers,
 no Conventional Commits type, no AI attribution.
+
+## Step 0 - Pick the mode
+
+- **Commit mode (default)**: stage and commit automatically. Do not ask for confirmation.
+- **Message-only mode**: ONLY when the user explicitly asks just for the message, e.g.
+  "only generate commit message", "just the message", "don't commit", "dry run",
+  "suggest a commit message", `/jira-commit message`. Generate the message and print it;
+  do not touch git state.
 
 ## Step 1 - Resolve the Jira ticket id
 
@@ -24,35 +34,34 @@ no Conventional Commits type, no AI attribution.
    request (e.g. "commit without ticket", "no jira prefix"). Never drop it on your own,
    including when the ticket is missing - ask instead.
 
-## Step 2 - Resolve the baseline
-
-- Default baseline: `develop`.
-- Use a different baseline ONLY if the user explicitly names one (e.g. "compare with main",
-  "baseline release/1.4"). Never infer it from upstream tracking, PR target, or repo default.
-- If `develop` does not exist locally, try `origin/develop`. If neither exists, ask the user
-  which baseline to use.
-
-## Step 3 - Gather the diff
+## Step 2 - Detect worktree changes
 
 Run in parallel:
 
 ```bash
-git status --short
-git diff --cached --stat
-git diff --cached <BASELINE>           # baseline vs index: branch commits + staged changes
-git diff --cached                      # only what this commit will contain
-git log --oneline <BASELINE>..HEAD     # earlier commits on the branch
+git status --short --untracked-files=all   # every changed, staged, and untracked file
+git diff --cached                          # staged changes
+git diff                                   # unstaged changes to tracked files
 ```
 
-- If nothing is staged: show `git status --short` and ask whether to stage all changes
-  (`git add -A`) or specific files. Do not stage silently.
-- Never stage obvious secrets (`.env`, credentials, keys). Warn the user if they are staged.
+For each untracked file listed in `git status` (`??`), read its content so new files are
+part of the summary. Skip generated/binary files (build output, lockfiles, images) beyond
+noting that they exist.
 
-Write the summary from the branch diff against the baseline, but make sure it describes
-what THIS commit (staged changes) actually does. If the branch already has commits, avoid
-repeating their summaries - focus on what is new.
+Decide what goes into the commit automatically - do NOT ask the user for confirmation:
+- **No changes at all**: tell the user there is nothing to commit and stop.
+- **Default**: include ALL worktree changes (staged, unstaged, untracked). In commit mode run
+  `git add -A`; in message-only mode do not stage, just treat everything as included.
+- **Narrower scope only on explicit request** in this message (e.g. "commit only staged",
+  "commit only src/foo.scala"): include exactly that and leave the rest untouched.
+- **Secrets**: never include obvious secrets (`.env`, credentials, private keys, tokens).
+  Leave them unstaged (`git restore --staged <file>` if already staged), continue with the
+  rest, and warn the user in the final output.
 
-## Step 4 - Write the summary
+Write the summary from exactly the included changes. In commit mode, after staging run
+`git diff --cached --stat` and base the summary on the final staged diff.
+
+## Step 3 - Write the summary
 
 Format: `[<TICKET>] <Summary>`
 
@@ -82,7 +91,12 @@ Bad:
 - `[NASTC-3965] feat(api): add endpoint` (no Conventional Commits types)
 - Anything over 72 characters or with a body.
 
-## Step 5 - Commit
+## Step 4 - Commit (or print the message)
+
+**Message-only mode**: print the message in a code block and stop. Do not stage, commit, or
+change the index or worktree in any way.
+
+**Commit mode** (default): commit right away without asking for confirmation:
 
 ```bash
 git commit -m "[<TICKET>] <Summary>"
@@ -94,7 +108,9 @@ git commit -m "[<TICKET>] <Summary>"
 
 ## Quick checklist
 
+- [ ] Mode chosen: commit (default) or message-only (explicit request)
 - [ ] Ticket from branch, or asked from user (prefix dropped only on explicit request)
-- [ ] Baseline is `develop` unless user explicitly named another
+- [ ] All worktree changes included automatically (minus secrets), unless user narrowed scope
+- [ ] Summary describes exactly the included changes
 - [ ] Imperative, capitalized, no period, <= 72 chars total
 - [ ] Single line, no body
