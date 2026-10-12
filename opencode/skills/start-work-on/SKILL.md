@@ -23,7 +23,7 @@ ALWAYS equals the branch name (slashes included), relative to the repo container
   `bugfix/x`) -> **branch mode**. Skip Jira entirely (Steps 2-3 and Step 6).
 - Ambiguous / missing -> ask the user.
 
-Optional: user may name a base branch ("from main", "based on release/1.2"). Default base: `develop`.
+Optional: user may name a base branch ("from main", "based on release/1.2"). Default base: `origin/develop` (always the remote ref, never local `develop`).
 
 ## Step 1 - Locate the repo container root
 
@@ -65,7 +65,8 @@ If not found -> report and stop.
 
 ## Step 5 - Create the worktree
 
-Always fetch first: `git fetch origin --prune`.
+ALWAYS fetch first, before any branch/worktree creation, so the new worktree is up to date:
+`git fetch origin --prune`. If fetch fails, report and stop (do not create from stale refs).
 
 Existence checks:
 - Worktree path already exists -> report it, stop.
@@ -79,13 +80,14 @@ Existence checks:
   git worktree add -b "<branch>" "<root>/<branch>" "origin/<base>"
   git -C "<root>/<branch>" branch --unset-upstream 2>/dev/null || true
   ```
-  (Base defaults to `develop`; fall back to local `<base>` if `origin/<base>` missing.
-  Unset upstream so the new branch does not track develop.)
+  Base is ALWAYS a remote ref: default `origin/develop`; a user-given base `X` becomes
+  `origin/X`. Never branch from a local branch. If `origin/<base>` does not exist after fetch,
+  report and stop. Unset upstream so the new branch does not track develop.
 
 **Branch mode** (existing branch):
 - Local branch exists -> `git worktree add "<root>/<branch>" "<branch>"`
 - Only remote exists -> `git worktree add --track -b "<branch>" "<root>/<branch>" "origin/<branch>"`
-- Neither exists -> ask whether to create it from `develop` (or given base); if yes use the
+- Neither exists -> ask whether to create it from `origin/develop` (or `origin/<given base>`); if yes use the
   ticket-mode command.
 
 ## Step 6 - Restore jira-mcp state (ticket mode only)
