@@ -14,3 +14,5 @@ stow -R -v -t ~/.config/opencode opencode
 stow -R -v -t ~/.config/k9s k9s
 stow -R -v -t ~/.config/1Password/ssh/ 1password
 stow -R -v -t ~/ spacemacs
+
+ln -s -F $(PWD)/opencode/skills/start-work-on ~/.config/opencode/skills/
