@@ -5,8 +5,8 @@ description: >
   Input is either a Jira ticket id (e.g. NASTC-4392) or a branch name
   (e.g. feature/NASTC-4392-enable-obtaining-a-user-access-token-for-a-custom-audience).
   For a ticket id: fetches the ticket summary via jira-mcp, builds branch
-  `feature/<TICKET>-<slugified-summary>` (max 77 chars), creates it from `develop`
-  (unless another base is given) and adds a worktree whose path equals the branch name.
+  `feature/<TICKET>-<slugified-summary>` (max 77 chars), runs `git fetch origin` and creates it
+  from remote `origin/dev` (never local dev; unless another base is given) and adds a worktree whose path equals the branch name.
   For a branch name: creates the worktree directly from that branch (no Jira needed).
   Use when the user says "start work on", "start working on NASTC-1234", "create worktree for",
   or invokes /start-work-on.
@@ -20,10 +20,10 @@ ALWAYS equals the branch name (slashes included), relative to the repo container
 - Matches `^[A-Za-z][A-Za-z0-9]+-[0-9]+$` (e.g. `NASTC-4392`, `nastc-4392`) -> **ticket mode**.
   Uppercase it.
 - Contains `/` or otherwise looks like a branch name (e.g. `feature/NASTC-4392-foo`,
-  `bugfix/x`) -> **branch mode**. Skip Jira entirely (Steps 2-3 and Step 6).
+  `bugfix/x`) -> **branch mode**. Skip Jira entirely (Steps 2-4).
 - Ambiguous / missing -> ask the user.
 
-Optional: user may name a base branch ("from main", "based on release/1.2"). Default base: `origin/develop` (always the remote ref, never local `develop`).
+Optional: user may name a base branch ("from main", "based on release/1.2"). Default base: `origin/dev` (always the remote ref, never local `dev`).
 
 ## Step 1 - Locate the repo container root
 
@@ -41,11 +41,11 @@ Worktree path = `<root>/<branch-name>`.
 ## Step 2 - Ensure jira-mcp is available (ticket mode only)
 
 1. Check whether `jira-mcp_*` tools (e.g. `jira-mcp_jira_get_issue`) are callable.
-2. If yes -> remember `JIRA_WAS_ENABLED=true`, continue.
-3. If not -> remember `JIRA_WAS_ENABLED=false`, then in `~/.config/opencode/opencode.json`
-   set `mcp.jira-mcp.enabled` to `true` (edit only that field). MCP servers load at startup,
-   so tell the user: "jira-mcp enabled — restart opencode and rerun `/start-work-on <TICKET>`."
-   and STOP. (Alternatively, if the user provides the summary text themselves, skip Jira and continue.)
+2. If yes -> continue.
+3. If not -> NEVER enable it yourself (do not edit opencode config files). Notify the user:
+   "jira-mcp is not enabled — please enable it and rerun `/start-work-on <TICKET>`
+   (or provide the ticket summary / branch name directly)." Then STOP and wait.
+   If the user provides the summary text, skip Jira and continue with Step 4.
 
 ## Step 3 - Fetch the summary (ticket mode only)
 
@@ -80,23 +80,17 @@ Existence checks:
   git worktree add -b "<branch>" "<root>/<branch>" "origin/<base>"
   git -C "<root>/<branch>" branch --unset-upstream 2>/dev/null || true
   ```
-  Base is ALWAYS a remote ref: default `origin/develop`; a user-given base `X` becomes
+  Base is ALWAYS a remote ref: default `origin/dev`; a user-given base `X` becomes
   `origin/X`. Never branch from a local branch. If `origin/<base>` does not exist after fetch,
-  report and stop. Unset upstream so the new branch does not track develop.
+  report and stop. Unset upstream so the new branch does not track dev.
 
 **Branch mode** (existing branch):
 - Local branch exists -> `git worktree add "<root>/<branch>" "<branch>"`
 - Only remote exists -> `git worktree add --track -b "<branch>" "<root>/<branch>" "origin/<branch>"`
-- Neither exists -> ask whether to create it from `origin/develop` (or `origin/<given base>`); if yes use the
+- Neither exists -> ask whether to create it from `origin/dev` (or `origin/<given base>`); if yes use the
   ticket-mode command.
 
-## Step 6 - Restore jira-mcp state (ticket mode only)
-
-If `JIRA_WAS_ENABLED=false` (we enabled it in an earlier run for this skill) and Jira is not
-needed further, set `mcp.jira-mcp.enabled` back to `false` in `~/.config/opencode/opencode.json`.
-If you cannot tell whether it was enabled only for this skill, ask the user before disabling.
-
-## Step 7 - Report
+## Step 6 - Report
 
 Print: branch name, base, worktree path, and `cd "<root>/<branch>"`.
 
@@ -104,4 +98,4 @@ Print: branch name, base, worktree path, and `cd "<root>/<branch>"`.
 
 - Never run destructive git commands (no `reset --hard`, `branch -D`, `worktree remove`, force).
 - Do not commit or push.
-- Do not touch other fields of `opencode.json`.
+- Never enable/disable MCP servers or edit opencode config files (`opencode.json` etc.).
