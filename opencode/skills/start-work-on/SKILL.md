@@ -8,6 +8,7 @@ description: >
   `feature/<TICKET>-<slugified-summary>` (max 77 chars), runs `git fetch origin` and creates it
   from remote `origin/dev` (never local dev; unless another base is given) and adds a worktree whose path equals the branch name.
   For a branch name: creates the worktree directly from that branch (no Jira needed).
+  Afterwards loads per-repository memory from `~/git/.memory/<repo-name>` (and maintains it).
   Use when the user says "start work on", "start working on NASTC-1234", "create worktree for",
   or invokes /start-work-on.
 ---
@@ -90,9 +91,32 @@ Existence checks:
 - Neither exists -> ask whether to create it from `origin/dev` (or `origin/<given base>`); if yes use the
   ticket-mode command.
 
-## Step 6 - Report
+## Step 6 - Load repository memory
 
-Print: branch name, base, worktree path, and `cd "<root>/<branch>"`.
+Per-repository memory lives in a single markdown file:
+`~/git/.memory/<repo-name>` where `<repo-name>` = basename of `<root>` from Step 1
+(e.g. `/Users/.../git/authie` -> `~/git/.memory/authie`).
+
+1. If the file exists -> read it fully and treat its contents as standing context/instructions
+   for all further work in this repository (conventions, build/test commands, gotchas, etc.).
+   Briefly summarize the key points in the report.
+2. If it does not exist -> do not create it now; mention "no repo memory yet" in the report.
+
+## Step 7 - Report
+
+Print: branch name, base, worktree path, `cd "<root>/<branch>"`, and repo memory summary
+(or "no repo memory yet").
+
+## Updating repository memory
+
+During the session, when the user asks to "remember" something about the repo, or when you
+discover durable, repo-wide knowledge worth keeping (build/test commands, conventions,
+non-obvious setup, recurring pitfalls):
+- `mkdir -p ~/git/.memory` and append/edit `~/git/.memory/<repo-name>` (markdown, terse bullets
+  grouped under headings).
+- Keep it repo-wide only: no ticket-specific notes, no secrets/tokens/credentials.
+- Update/remove outdated entries instead of duplicating. Unprompted additions: tell the user
+  what was saved.
 
 ## Rules
 
